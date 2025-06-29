@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 const TrueFocus = ({
@@ -12,9 +12,9 @@ const TrueFocus = ({
   animationDuration = 0.5,
   pauseBetweenAnimations = 1,
 }) => {
-  const words = sentence.split(" ");
+  const words = useMemo(() => sentence.split(" "), [sentence]);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [lastActiveIndex, setLastActiveIndex] = useState(null);
+  const [lastActiveIndex, setLastActiveIndex] = useState<number | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const wordRefs = useRef<(HTMLSpanElement | null)[]>([]);
   const [focusRect, setFocusRect] = useState({ x: 0, y: 0, width: 0, height: 0 });
@@ -52,7 +52,7 @@ const TrueFocus = ({
   };
 
   const handleMouseLeave = () => {
-    if (manualMode) {
+    if (manualMode && lastActiveIndex !== null) {
       setCurrentIndex(lastActiveIndex);
     }
   };
