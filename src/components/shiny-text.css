@@ -1,0 +1,38 @@
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-gradient-text {
+  position: relative;
+  display: inline-block;
+}
+
+.animated-gradient-text .text-content {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-size: 200% 100%;
+  animation-name: gradient-animation;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.animated-gradient-text .gradient-overlay {
+  position: absolute;
+  inset: -3px;
+  border-radius: inherit;
+  background-size: 200% 100%;
+  animation-name: gradient-animation;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  z-index: -1;
+  filter: blur(6px);
+}

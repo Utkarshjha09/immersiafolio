@@ -1,37 +1,32 @@
 'use client';
 
+import './shiny-text.css';
 import { cn } from '@/lib/utils';
+import type React from 'react';
 
 const ShinyText = ({
-  text,
-  disabled = false,
-  speed = 5,
+  children,
   className = '',
+  colors = ["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"],
+  animationSpeed = 8,
+  showBorder = false
 }: {
-  text: string;
-  disabled?: boolean;
-  speed?: number;
-  className?: string;
+  children: React.ReactNode,
+  className?: string,
+  colors?: string[],
+  animationSpeed?: number,
+  showBorder?: boolean
 }) => {
-  const animationDuration = `${speed}s`;
+  const gradientStyle = {
+    backgroundImage: `linear-gradient(to right, ${colors.join(", ")})`,
+    animationDuration: `${animationSpeed}s`,
+  };
 
   return (
-    <p
-      className={cn(
-        'text-[#b5b5b5a4] bg-clip-text inline-block',
-        !disabled && 'animate-shine',
-        className
-      )}
-      style={{
-        backgroundImage:
-          'linear-gradient(120deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 60%)',
-        backgroundSize: '200% 100%',
-        WebkitBackgroundClip: 'text',
-        animationDuration: animationDuration,
-      }}
-    >
-      {text}
-    </p>
+    <div className={cn('animated-gradient-text', className)}>
+      {showBorder && <div className="gradient-overlay" style={gradientStyle}></div>}
+      <div className="text-content" style={gradientStyle}>{children}</div>
+    </div>
   );
 };
 
