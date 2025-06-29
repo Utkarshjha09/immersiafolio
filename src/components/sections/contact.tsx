@@ -3,13 +3,18 @@ import { socialLinks } from '@/lib/data';
 import { Button } from '@/components/ui/button';
 import { Code, Github, Instagram, Linkedin, Mail, Phone } from 'lucide-react';
 import Link from 'next/link';
+import TrueFocus from '../true-focus';
 
 export default function Contact() {
   return (
     <section id="contact" className="w-full py-20 lg:py-32 border-t border-border">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center text-center mb-12">
-            <h2 className="text-4xl font-headline font-bold tracking-tight sm:text-5xl">Get in Touch</h2>
+            <TrueFocus
+              sentence="Get in Touch"
+              borderColor="#BE52F2"
+              glowColor="rgba(190, 82, 242, 0.6)"
+            />
             <div className="mt-2 h-1.5 w-24 bg-primary rounded-full"></div>
         </div>
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-24">
