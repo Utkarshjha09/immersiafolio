@@ -10,7 +10,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/#about', label: 'About' },
+  { href: '/about', label: 'About' },
   { href: '/#skills', label: 'Skills' },
   { href: '/#projects', label: 'Projects' },
   { href: '/#achievements', label: 'Achievements' },
@@ -27,8 +27,8 @@ export default function Header() {
     <header className="w-full border-b bg-background">
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex flex-col">
-          <span className="text-xl font-bold font-headline">Vishal Kumar Ojha</span>
-          <span className="text-sm text-muted-foreground">Student | Developer</span>
+          <span className="text-xl font-bold font-headline">Utkarsh Jha</span>
+          <span className="text-sm text-muted-foreground">Developer | Designer</span>
         </Link>
         
         {isMobile ? (

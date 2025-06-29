@@ -5,8 +5,8 @@ import Footer from '@/components/layout/footer';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Vishal Kumar Ojha',
-  description: 'The portfolio of Vishal Kumar Ojha, a student and developer.',
+  title: 'Utkarsh Jha',
+  description: 'The portfolio of Utkarsh Jha, a versatile developer and designer.',
 };
 
 export default function RootLayout({

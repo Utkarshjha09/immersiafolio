@@ -19,8 +19,8 @@ export default function AboutPage() {
               />
             </div>
             <div className="mt-6 text-center">
-              <h1 className="text-3xl font-headline font-bold">Vishal Kumar Ojha</h1>
-              <p className="text-muted-foreground mt-1">Student | Developer</p>
+              <h1 className="text-3xl font-headline font-bold">Utkarsh Jha</h1>
+              <p className="text-muted-foreground mt-1">Developer | Designer</p>
             </div>
             <div className="flex items-center gap-4 mt-4">
               <a href={socialLinks.twitter} target="_blank" rel="noopener noreferrer" aria-label="Twitter">
@@ -42,7 +42,7 @@ export default function AboutPage() {
           <div className="md:col-span-2 space-y-6 text-lg text-foreground/80">
             <h2 className="font-headline text-4xl font-bold text-primary">About Me</h2>
              <p>
-                Hey, I'm Vishal Kumar Ojha, a 2nd-year student at VIT University, Bhopal, passionate about building impactful tech solutions. As the Founder of ArnoCodes, building HackCrusade, I specialize in UI/UX design, full-stack development (MERN), and frameworks like React, Django & Flask. Beyond coding, I have 75K+ impressions on LinkedIn and experience in content writing and video editing. I currently DCA of Notion Community VITB and former lead tech teams at Notion Community VIT Bhopal and E-Cell VIT Bhopal. Always eager to learn, grow, and collaborate—let's create something remarkable together!
+                Hello, I'm Utkarsh Jha. I am a dedicated and versatile professional with a diverse skill set that includes web development, Verilog, embedded systems, data science, and UI/UX design. I am passionate about leveraging technology to solve real-world problems and create intuitive, efficient, and beautiful digital experiences. Whether I'm building a full-stack web application, designing a custom microprocessor, or analyzing complex datasets, I bring a commitment to quality and a drive for innovation. I'm always open to new challenges and collaborations, so feel free to reach out!
               </p>
           </div>
         </div>

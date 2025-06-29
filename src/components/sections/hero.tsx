@@ -12,20 +12,20 @@ export default function Hero() {
           <div className="flex flex-col justify-center space-y-6">
             <div className="space-y-4">
               <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl font-headline">
-                Vishal Kumar Ojha
+                Utkarsh Jha
               </h1>
               <p className="text-lg text-muted-foreground">
-                Student | Developer
+                Developer | Designer
               </p>
               <div className="text-xl md:text-2xl font-semibold">
                 <Typewriter 
-                  strings={["Competitive Programmer", "Full-Stack Developer", "UI/UX Designer"]}
+                  strings={["Web Developer", "Verilog Expert", "Embedded Systems Engineer", "Data Scientist", "UI/UX Designer"]}
                   stringClassName="text-primary"
                   cursorClassName="text-primary"
                 />
               </div>
               <p className="max-w-[600px] text-muted-foreground md:text-lg">
-                Hey, I'm Vishal Kumar Ojha, a 2nd-year student at VIT University, Bhopal, passionate about building impactful tech solutions. As the Founder of ArnoCodes, building HackCrusade, I specialize in UI/UX design, full-stack development (MERN), and frameworks like React, Django & Flask. Beyond coding, I have 75K+ impressions on LinkedIn and experience in content writing and video editing. I currently DCA of Notion Community VITB and former lead tech teams at Notion Community VIT Bhopal and E-Cell VIT Bhopal. Always eager to learn, grow, and collaborate—let's create something remarkable together!
+                Hello! I'm Utkarsh Jha, a passionate and versatile developer with expertise across multiple domains. My skills range from creating responsive and dynamic websites as a Web Developer to designing complex digital circuits with Verilog. I also build intelligent hardware as an Embedded Systems Engineer, and uncover insights from data as a Data Scientist. Complementing my technical skills is a keen eye for UI/UX Design, ensuring every project is not just powerful, but also user-friendly and aesthetically pleasing. You can add more about your journey here!
               </p>
             </div>
             <div className="flex flex-col gap-4 sm:flex-row">
@@ -40,7 +40,7 @@ export default function Hero() {
           <div className="flex items-center justify-center">
             <Image
               src="https://placehold.co/600x600.png"
-              alt="Vishal Kumar Ojha"
+              alt="Utkarsh Jha"
               width={500}
               height={500}
               className="rounded-lg object-cover shadow-lg"
