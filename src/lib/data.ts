@@ -46,9 +46,9 @@ export const projects: Project[] = [
 ];
 
 export const socialLinks = {
-  github: '#',
-  linkedin: '#',
+  github: 'https://github.com/Utkarshjha09',
+  linkedin: 'https://www.linkedin.com/in/utkarshjha03/',
   twitter: '#',
-  instagram: '#',
+  instagram: 'https://www.instagram.com/utkarshjha03/',
   portfolio: '#',
 };
