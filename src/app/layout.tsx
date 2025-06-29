@@ -5,8 +5,8 @@ import Footer from '@/components/layout/footer';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Utkarsh Jha',
-  description: 'The portfolio of Utkarsh Jha, a creative developer.',
+  title: 'Vishal Kumar Ojha',
+  description: 'The portfolio of Vishal Kumar Ojha, a student and developer.',
 };
 
 export default function RootLayout({
@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

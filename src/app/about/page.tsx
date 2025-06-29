@@ -19,8 +19,8 @@ export default function AboutPage() {
               />
             </div>
             <div className="mt-6 text-center">
-              <h1 className="text-3xl font-headline font-bold">John Doe</h1>
-              <p className="text-muted-foreground mt-1">Creative Developer</p>
+              <h1 className="text-3xl font-headline font-bold">Vishal Kumar Ojha</h1>
+              <p className="text-muted-foreground mt-1">Student | Developer</p>
             </div>
             <div className="flex items-center gap-4 mt-4">
               <a href={socialLinks.twitter} target="_blank" rel="noopener noreferrer" aria-label="Twitter">
@@ -33,32 +33,17 @@ export default function AboutPage() {
                 <Linkedin className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" />
               </a>
             </div>
-            <Button className="mt-6 w-full">
-              <Download className="mr-2 h-4 w-4" /> Download CV
+            <Button className="mt-6 w-full" asChild>
+               <a href="/resume.pdf" download>
+                <Download className="mr-2 h-4 w-4" /> Download CV
+               </a>
             </Button>
           </div>
           <div className="md:col-span-2 space-y-6 text-lg text-foreground/80">
-            <h2 className="font-headline text-4xl font-bold text-primary-foreground">About Me</h2>
-            <p>
-              I am a passionate and creative developer with a knack for building beautiful,
-              immersive, and user-friendly digital experiences. With a background in both design and
-              engineering, I bridge the gap between aesthetics and functionality to deliver products
-              that are not only visually appealing but also robust and performant.
-            </p>
-            <p>
-              My journey into web development started with a fascination for how interactive
-              elements could tell a story. Since then, I've honed my skills in modern web
-              technologies like React, Next.js, and Three.js, always pushing the boundaries of
-              what's possible on the web.
-            </p>
-            <p>
-              When I'm not coding, you can find me exploring the latest trends in generative art,
-              contributing to open-source projects, or looking for the next creative challenge.
-              I believe in lifelong learning and constantly seek to expand my skill set.
-            </p>
-            <p>
-              Let's connect and create something amazing together.
-            </p>
+            <h2 className="font-headline text-4xl font-bold text-primary">About Me</h2>
+             <p>
+                Hey, I'm Vishal Kumar Ojha, a 2nd-year student at VIT University, Bhopal, passionate about building impactful tech solutions. As the Founder of ArnoCodes, building HackCrusade, I specialize in UI/UX design, full-stack development (MERN), and frameworks like React, Django & Flask. Beyond coding, I have 75K+ impressions on LinkedIn and experience in content writing and video editing. I currently DCA of Notion Community VITB and former lead tech teams at Notion Community VIT Bhopal and E-Cell VIT Bhopal. Always eager to learn, grow, and collaborate—let's create something remarkable together!
+              </p>
           </div>
         </div>
       </div>
