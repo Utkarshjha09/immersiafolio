@@ -127,9 +127,9 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
-  mask-image: linear-gradient(to top, black 25%, transparent 80%);
-  -webkit-mask-image: linear-gradient(to top, black 25%, transparent 80%);
+  object-position: center 70%;
+  mask-image: linear-gradient(to top, black 35%, transparent 85%);
+  -webkit-mask-image: linear-gradient(to top, black 35%, transparent 85%);
 }
 
 .pc-details {
