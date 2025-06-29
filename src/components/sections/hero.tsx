@@ -15,7 +15,7 @@ export default function Hero() {
                 Utkarsh Jha
               </h1>
               <p className="text-lg text-muted-foreground">
-                Developer | Designer
+                Data Scientist | Data Analyst | Web Developer | Embedded
               </p>
               <div className="text-xl md:text-2xl font-semibold">
                 <Typewriter 

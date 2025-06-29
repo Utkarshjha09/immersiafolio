@@ -28,7 +28,7 @@ export default function Header() {
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex flex-col">
           <span className="text-xl font-bold font-headline">Utkarsh Jha</span>
-          <span className="text-sm text-muted-foreground">Developer | Designer</span>
+          <span className="text-sm text-muted-foreground">Data Scientist | Data Analyst | Web Developer | Embedded</span>
         </Link>
         
         {isMobile ? (
