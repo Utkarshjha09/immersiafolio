@@ -1,0 +1,198 @@
+:root {
+  --card-opacity: 0.1;
+  --card-transition-duration: 300ms;
+  --card-border-radius: 1rem;
+  --card-border-color: rgba(255, 255, 255, 0.1);
+  --card-shine-opacity: 0.2;
+  --card-glare-opacity: 0.1;
+}
+
+.pc-card-wrapper {
+  perspective: 2000px;
+  transform-style: preserve-3d;
+  width: 320px;
+  height: 420px;
+  position: relative;
+  color: #fff;
+}
+
+.pc-card-wrapper::before,
+.pc-card-wrapper::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--card-border-radius);
+  transition: transform var(--card-transition-duration) ease-out;
+  background-image: var(--behind-gradient);
+  background-size: 200% 200%;
+  background-position: var(--background-x) var(--background-y);
+}
+
+.pc-card-wrapper::after {
+  opacity: 0.8;
+  filter: blur(20px);
+}
+
+.pc-card-wrapper.active::before,
+.pc-card-wrapper.active::after {
+  transform: translateZ(-20px) scale(0.95);
+}
+
+.pc-card {
+  background-color: hsl(215 28% 17% / 0.5);
+  border-radius: var(--card-border-radius);
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform: rotateY(var(--rotate-x)) rotateX(var(--rotate-y));
+  transition: transform var(--card-transition-duration) ease-out;
+  z-index: 1;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--card-border-color);
+  backdrop-filter: blur(16px);
+}
+
+.pc-inside {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  background-image: var(--inner-gradient);
+  transform-style: preserve-3d;
+  z-index: 2;
+}
+
+.pc-shine, .pc-glare {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--card-border-radius);
+  transition: opacity var(--card-transition-duration) ease-out;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.pc-card.active .pc-shine,
+.pc-card.active .pc-glare {
+  opacity: 1;
+}
+
+.pc-shine {
+  background: radial-gradient(
+    circle at var(--pointer-x) var(--pointer-y),
+    hsla(0, 0%, 100%, var(--card-shine-opacity)),
+    transparent 40%
+  );
+}
+
+.pc-glare {
+  --glare-angle: 135deg;
+  --glare-opacity: calc(var(--pointer-from-center) * var(--card-glare-opacity));
+  opacity: var(--glare-opacity);
+  background: linear-gradient(
+    var(--glare-angle),
+    hsla(0, 0%, 100%, 0.25) 0%,
+    transparent 60%
+  );
+  transform: rotate(calc((var(--pointer-from-left) - 0.5) * 60deg));
+}
+
+
+.pc-content {
+  position: relative;
+  z-index: 3;
+}
+
+.pc-avatar-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pc-avatar-content .avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 20px -5px rgba(255, 255, 255, 0.5);
+  object-fit: cover;
+}
+
+.pc-user-info {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 0.75rem;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pc-user-details {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pc-mini-avatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.pc-handle {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.pc-status {
+  font-size: 0.75rem;
+  color: #ccc;
+}
+
+.pc-contact-btn {
+  background-color: #BE52F2;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.pc-contact-btn:hover {
+  background-color: #a945d7;
+}
+
+.pc-details {
+  text-align: center;
+}
+
+.pc-details h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.pc-details p {
+  font-size: 1rem;
+  color: #ddd;
+  margin-top: 0.25rem;
+}

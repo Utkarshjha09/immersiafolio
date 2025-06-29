@@ -2,8 +2,8 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Typewriter } from '@/components/typewriter';
-import { ThreeScene } from '../three-scene';
 import ShinyText from '../shiny-text';
+import ProfileCard from '../profile-card';
 
 export default function Hero() {
   return (
@@ -36,8 +36,18 @@ export default function Hero() {
               </Button>
             </div>
           </div>
-          <div className="flex items-center justify-center h-[500px]">
-            <ThreeScene />
+          <div className="flex items-center justify-center min-h-[400px]">
+            <ProfileCard
+              name="Utkarsh Jha"
+              title="Full-Stack Developer"
+              handle="utkarshjha"
+              avatarUrl="https://placehold.co/256x256.png"
+              miniAvatarUrl="https://placehold.co/64x64.png"
+              status="Building Cool Stuff"
+              onContactClick={() => {
+                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            />
           </div>
         </div>
       </div>
