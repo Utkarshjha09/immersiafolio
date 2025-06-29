@@ -34,7 +34,7 @@ const easeInOutCubic = (x: number) =>
   x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
 
 const ProfileCardComponent = ({
-  avatarUrl = "https://placehold.co/400x500.png",
+  avatarUrl = "/utkarsh-jha.png",
   iconUrl = "",
   grainUrl = "",
   behindGradient,
@@ -43,7 +43,6 @@ const ProfileCardComponent = ({
   className = "",
   enableTilt = true,
   name = "Utkarsh Jha",
-  title = "Software Engineer",
 }: {
   avatarUrl?: string;
   iconUrl?: string;
@@ -54,7 +53,6 @@ const ProfileCardComponent = ({
   className?: string;
   enableTilt?: boolean;
   name?: string;
-  title?: string;
 }) => {
   const wrapRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
@@ -253,7 +251,6 @@ const ProfileCardComponent = ({
           <div className="pc-glare" />
           <div className="pc-content pc-details">
             <h3>{name}</h3>
-            <p>{title}</p>
           </div>
           <div className="pc-content pc-avatar-content">
             <img
@@ -261,7 +258,7 @@ const ProfileCardComponent = ({
               src={avatarUrl}
               alt={`${name || "User"} avatar`}
               loading="lazy"
-              data-ai-hint="person portrait"
+              data-ai-hint="person photo"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
                 target.style.display = "none";

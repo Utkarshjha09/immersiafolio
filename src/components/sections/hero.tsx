@@ -39,8 +39,7 @@ export default function Hero() {
           <div className="flex items-center justify-center min-h-[480px]">
             <ProfileCard
               name="Utkarsh Jha"
-              title=""
-              avatarUrl="https://placehold.co/400x500.png"
+              avatarUrl="/utkarsh-jha.png"
             />
           </div>
         </div>
