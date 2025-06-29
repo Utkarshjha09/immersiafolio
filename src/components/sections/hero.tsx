@@ -36,17 +36,11 @@ export default function Hero() {
               </Button>
             </div>
           </div>
-          <div className="flex items-center justify-center min-h-[400px]">
+          <div className="flex items-center justify-center min-h-[480px]">
             <ProfileCard
               name="Utkarsh Jha"
               title="Full-Stack Developer"
-              handle="utkarshjha"
-              avatarUrl="https://placehold.co/256x256.png"
-              miniAvatarUrl="https://placehold.co/64x64.png"
-              status="Building Cool Stuff"
-              onContactClick={() => {
-                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-              }}
+              avatarUrl="https://placehold.co/400x500.png"
             />
           </div>
         </div>

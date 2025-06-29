@@ -6,7 +6,7 @@ const DEFAULT_BEHIND_GRADIENT =
   "radial-gradient(farthest-side circle at var(--pointer-x) var(--pointer-y),hsla(266,100%,90%,var(--card-opacity)) 4%,hsla(266,50%,80%,calc(var(--card-opacity)*0.75)) 10%,hsla(266,25%,70%,calc(var(--card-opacity)*0.5)) 50%,hsla(266,0%,60%,0) 100%),radial-gradient(35% 52% at 55% 20%,#BE52F2c4 0%,#073aff00 100%),radial-gradient(100% 100% at 50% 50%,#243A73ff 1%,#073aff00 76%),conic-gradient(from 124deg at 50% 50%,#BE52F2ff 0%,#243A73ff 40%,#243A73ff 60%,#BE52F2ff 100%)";
 
 const DEFAULT_INNER_GRADIENT =
-  "linear-gradient(145deg,#60496e8c 0%,#71C4FF44 100%)";
+  "linear-gradient(145deg, hsl(220 30% 25% / 0.5) 0%, hsl(280 50% 30% / 0.3) 100%)";
 
 const ANIMATION_CONFIG = {
   SMOOTH_DURATION: 600,
@@ -34,7 +34,7 @@ const easeInOutCubic = (x: number) =>
   x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
 
 const ProfileCardComponent = ({
-  avatarUrl = "https://placehold.co/256x256.png",
+  avatarUrl = "https://placehold.co/400x500.png",
   iconUrl = "",
   grainUrl = "",
   behindGradient,
@@ -42,14 +42,8 @@ const ProfileCardComponent = ({
   showBehindGradient = true,
   className = "",
   enableTilt = true,
-  miniAvatarUrl,
   name = "Utkarsh Jha",
   title = "Software Engineer",
-  handle = "utkarsh",
-  status = "Online",
-  contactText = "Contact",
-  showUserInfo = true,
-  onContactClick,
 }: {
   avatarUrl?: string;
   iconUrl?: string;
@@ -59,14 +53,8 @@ const ProfileCardComponent = ({
   showBehindGradient?: boolean;
   className?: string;
   enableTilt?: boolean;
-  miniAvatarUrl?: string;
   name?: string;
   title?: string;
-  handle?: string;
-  status?: string;
-  contactText?: string;
-  showUserInfo?: boolean;
-  onContactClick?: () => void;
 }) => {
   const wrapRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
@@ -253,10 +241,6 @@ const ProfileCardComponent = ({
     [iconUrl, grainUrl, showBehindGradient, behindGradient, innerGradient]
   );
 
-  const handleContactClick = useCallback(() => {
-    onContactClick?.();
-  }, [onContactClick]);
-
   return (
     <div
       ref={wrapRef}
@@ -267,55 +251,22 @@ const ProfileCardComponent = ({
         <div className="pc-inside">
           <div className="pc-shine" />
           <div className="pc-glare" />
+          <div className="pc-content pc-details">
+            <h3>{name}</h3>
+            <p>{title}</p>
+          </div>
           <div className="pc-content pc-avatar-content">
             <img
               className="avatar"
               src={avatarUrl}
               alt={`${name || "User"} avatar`}
               loading="lazy"
-              data-ai-hint="profile picture"
+              data-ai-hint="person portrait"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
                 target.style.display = "none";
               }}
             />
-            {showUserInfo && (
-              <div className="pc-user-info">
-                <div className="pc-user-details">
-                  <div className="pc-mini-avatar">
-                    <img
-                      src={miniAvatarUrl || avatarUrl}
-                      alt={`${name || "User"} mini avatar`}
-                      loading="lazy"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.style.opacity = "0.5";
-                        target.src = avatarUrl;
-                      }}
-                    />
-                  </div>
-                  <div className="pc-user-text">
-                    <div className="pc-handle">@{handle}</div>
-                    <div className="pc-status">{status}</div>
-                  </div>
-                </div>
-                <button
-                  className="pc-contact-btn"
-                  onClick={handleContactClick}
-                  style={{ pointerEvents: "auto" }}
-                  type="button"
-                  aria-label={`Contact ${name || "user"}`}
-                >
-                  {contactText}
-                </button>
-              </div>
-            )}
-          </div>
-          <div className="pc-content">
-            <div className="pc-details">
-              <h3>{name}</h3>
-              <p>{title}</p>
-            </div>
           </div>
         </div>
       </section>
