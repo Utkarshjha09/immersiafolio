@@ -39,7 +39,7 @@ export default function Hero() {
           <div className="flex items-center justify-center min-h-[480px]">
             <ProfileCard
               name="Utkarsh Jha"
-              avatarUrl="/utkarshjha.png"
+              avatarUrl="/utkarshjha.jpg"
             />
           </div>
         </div>
