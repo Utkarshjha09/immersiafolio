@@ -5,8 +5,8 @@ import Footer from '@/components/layout/footer';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'ImmersiaFolio',
-  description: 'An immersive portfolio website by a creative developer.',
+  title: 'Utkarsh Jha',
+  description: 'The portfolio of Utkarsh Jha, a creative developer.',
 };
 
 export default function RootLayout({

@@ -17,7 +17,7 @@ export default function Hero() {
       </div>
       <div className="relative z-10 p-4 flex flex-col items-center">
         <h1 className="font-headline text-5xl md:text-7xl lg:text-8xl font-bold text-primary-foreground mb-4 animate-fade-in-down">
-          ImmersiaFolio
+          Utkarsh Jha
         </h1>
         <p className="max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground mb-8 animate-fade-in-up">
           Crafting immersive digital experiences with code and creativity.

@@ -9,9 +9,14 @@ import { Menu, Wand2 } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 const navLinks = [
-  { href: '/#projects', label: 'Projects' },
+  { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
-  { href: '/#contact', label: 'Contact' },
+  { href: '/#skills', label: 'Skills' },
+  { href: '/#projects', label: 'Projects' },
+  { href: '/#achievements', label: 'Achievements' },
+  { href: '/#education', label: 'Education' },
+  { href: '/#experience', label: 'Experience' },
+  { href: '/#contact', label: 'Connect With Me' },
 ];
 
 export default function Header() {
@@ -37,7 +42,7 @@ export default function Header() {
               strokeWidth="16"
             />
           </svg>
-          <span className="font-bold font-headline">ImmersiaFolio</span>
+          <span className="font-bold font-headline">Utkarsh Jha</span>
         </Link>
         <nav className="hidden flex-1 items-center space-x-4 md:flex">
           {navLinks.map(({ href, label }) => (
