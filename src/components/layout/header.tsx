@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
+import ShinyText from '../shiny-text';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -28,7 +29,7 @@ export default function Header() {
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex flex-col">
           <span className="text-xl font-bold font-headline">Utkarsh Jha</span>
-          <span className="text-sm text-muted-foreground">Data Scientist | Data Analyst | Web Developer | Embedded</span>
+          <ShinyText className="text-sm" text="Data Scientist | Data Analyst | Web Developer | Embedded" />
         </Link>
         
         {isMobile ? (

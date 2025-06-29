@@ -3,6 +3,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Typewriter } from '@/components/typewriter';
 import { ThreeScene } from '../three-scene';
+import ShinyText from '../shiny-text';
 
 export default function Hero() {
   return (
@@ -14,9 +15,7 @@ export default function Hero() {
               <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl font-headline">
                 Utkarsh Jha
               </h1>
-              <p className="text-lg text-muted-foreground">
-                Data Scientist | Data Analyst | Web Developer | Embedded
-              </p>
+              <ShinyText className="text-lg" text="Data Scientist | Data Analyst | Web Developer | Embedded" />
               <div className="text-xl md:text-2xl font-semibold">
                 <Typewriter 
                   strings={["Web Developer", "Verilog Expert", "Embedded Systems Engineer", "Data Scientist", "UI/UX Designer"]}
