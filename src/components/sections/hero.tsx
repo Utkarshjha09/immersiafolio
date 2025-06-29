@@ -1,8 +1,8 @@
 'use client';
 import React from 'react';
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Typewriter } from '@/components/typewriter';
+import { ThreeScene } from '../three-scene';
 
 export default function Hero() {
   return (
@@ -20,8 +20,8 @@ export default function Hero() {
               <div className="text-xl md:text-2xl font-semibold">
                 <Typewriter 
                   strings={["Web Developer", "Verilog Expert", "Embedded Systems Engineer", "Data Scientist", "UI/UX Designer"]}
-                  stringClassName="text-primary"
-                  cursorClassName="text-primary"
+                  stringClassName="text-accent"
+                  cursorClassName="text-accent"
                 />
               </div>
               <p className="max-w-[600px] text-muted-foreground md:text-lg">
@@ -37,15 +37,8 @@ export default function Hero() {
               </Button>
             </div>
           </div>
-          <div className="flex items-center justify-center">
-            <Image
-              src="https://placehold.co/600x600.png"
-              alt="Utkarsh Jha"
-              width={500}
-              height={500}
-              className="rounded-lg object-cover shadow-lg"
-              data-ai-hint="professional headshot"
-            />
+          <div className="flex items-center justify-center h-[500px]">
+            <ThreeScene />
           </div>
         </div>
       </div>
