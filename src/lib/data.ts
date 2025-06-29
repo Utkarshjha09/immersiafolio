@@ -49,6 +49,6 @@ export const socialLinks = {
   github: 'https://github.com/Utkarshjha09',
   linkedin: 'https://www.linkedin.com/in/utkarshjha03/',
   twitter: '#',
-  instagram: 'https://www.instagram.com/utkarshjha03/',
-  portfolio: '#',
+  instagram: 'https://www.instagram.com/utkarshjha03?igsh=MXM5OHl2eXBrZWIwdQ==',
+  portfolio: 'https://leetcode.com/u/W03VazWUr9/',
 };
