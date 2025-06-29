@@ -49,4 +49,6 @@ export const socialLinks = {
   github: '#',
   linkedin: '#',
   twitter: '#',
+  instagram: '#',
+  portfolio: '#',
 };
