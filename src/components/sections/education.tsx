@@ -6,19 +6,19 @@ export default function Education() {
     {
       title: "S.R.D.A.V. Public School, Pupri",
       subtitle: "10th Standard",
-      date: "2018",
+      date: "2020",
       description: "Completed my secondary education, building a strong foundation in core subjects."
     },
     {
       title: "J.P. Central School, Samastipur",
       subtitle: "12th Standard (Science)",
-      date: "2020",
+      date: "2022",
       description: "Excelled in my higher secondary education with a focus on Physics, Chemistry, and Mathematics."
     },
     {
-      title: "Chandigarh Engineering College",
+      title: "Vellore Institute of Technology, Bhopal",
       subtitle: "B.Tech, Electronics & Communication",
-      date: "2021-2025",
+      date: "2023-2027",
       description: "Currently in my third year, deepening my expertise in electronics, communication systems, and hands-on project development."
     }
   ];
