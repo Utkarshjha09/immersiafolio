@@ -1,6 +1,5 @@
 'use server';
 import { z } from 'zod';
-import { Resend } from 'resend';
 import { db } from './firebase';
 
 const formSchema = z.object({
@@ -15,8 +14,6 @@ async function verifyRecaptcha(token: string) {
   const secretKey = process.env.RECAPTCHA_SECRET_KEY;
   if (!secretKey) {
     console.error('reCAPTCHA secret key not found.');
-    // In a real app, you might want to fail open or closed depending on security needs.
-    // For this example, we will fail open in dev but could fail closed in prod.
     return process.env.NODE_ENV !== 'production';
   }
 
@@ -50,7 +47,7 @@ export async function sendContactMessage(data: z.infer<typeof formSchema>) {
   }
 
   try {
-    // Operation 1: Store in Firestore
+    // Temporarily removed Resend logic to focus on the Firestore issue.
     await db.collection('contacts').add({
       name,
       email,
@@ -59,35 +56,10 @@ export async function sendContactMessage(data: z.infer<typeof formSchema>) {
       createdAt: new Date(),
     });
 
-    // Operation 2: Send email via Resend
-    if (process.env.RESEND_API_KEY) {
-        const resend = new Resend(process.env.RESEND_API_KEY);
-        const emailResponse = await resend.emails.send({
-          from: 'Portfolio Contact Form <onboarding@resend.dev>', // IMPORTANT: Replace with your verified domain in production
-          to: 'utkarshjha.999@gmail.com',
-          subject: `New Portfolio Message: ${subject}`,
-          reply_to: email,
-          html: `
-            <h2>New Contact Message</h2>
-            <p><strong>Name:</strong> ${name}</p>
-            <p><strong>Email:</strong> ${email}</p>
-            <p><strong>Subject:</strong> ${subject}</p>
-            <p><strong>Message:</strong></p>
-            <p>${message.replace(/\n/g, '<br>')}</p>
-          `,
-        });
-
-        if (emailResponse.error) {
-          throw new Error(`Resend Error: ${emailResponse.error.message}`);
-        }
-    } else {
-        console.log('Resend API key not configured. Skipping email notification.');
-    }
-
     return { success: true, data: result.data };
 
   } catch (error) {
-    console.error("Failed to send or store message:", error);
+    console.error("Failed to write to Firestore:", error);
     const errorMessage = error instanceof Error ? error.message : "An unknown error occurred.";
     return { success: false, error: { _errors: [ `Server error: ${errorMessage}` ] }};
   }
