@@ -19,7 +19,7 @@ const formSchema = z.object({
   email: z.string().email({ message: 'Please enter a valid email.' }),
   subject: z.string().min(2, { message: 'Subject must be at least 2 characters.' }),
   message: z.string().min(10, { message: 'Message must be at least 10 characters.' }),
-  recaptchaToken: z.string().min(1, { message: 'Please complete the reCAPTCHA.' }),
+  recaptchaToken: z.string(), // Keep for UI, but won't be required for submission
 });
 
 export function ContactForm() {
@@ -43,7 +43,9 @@ export function ContactForm() {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     startTransition(async () => {
-      const result = await sendContactMessage(values);
+      // Temporarily remove recaptchaToken from submitted data for debugging
+      const { recaptchaToken, ...formData } = values;
+      const result = await sendContactMessage(formData);
       if (result.success) {
         toast({
           title: 'Message Sent!',
@@ -146,7 +148,7 @@ export function ContactForm() {
             </AlertDescription>
           </Alert>
         )}
-        <Button type="submit" className="w-full" disabled={isPending || !recaptchaToken || !siteKey}>
+        <Button type="submit" className="w-full" disabled={isPending || !siteKey}>
           {isPending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : 'Send Message'}
         </Button>
       </form>

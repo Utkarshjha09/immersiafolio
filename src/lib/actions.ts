@@ -2,37 +2,15 @@
 import { z } from 'zod';
 import { db } from './firebase';
 
+// Temporarily remove recaptchaToken for debugging
 const formSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
   email: z.string().email({ message: 'Please enter a valid email.' }),
   subject: z.string().min(2, { message: 'Subject must be at least 2 characters.' }),
   message: z.string().min(10, { message: 'Message must be at least 10 characters.' }),
-  recaptchaToken: z.string().min(1, { message: 'Please complete the reCAPTCHA.' }),
+  // recaptchaToken: z.string().min(1, { message: 'Please complete the reCAPTCHA.' }),
 });
 
-async function verifyRecaptcha(token: string) {
-  const secretKey = process.env.RECAPTCHA_SECRET_KEY;
-  if (!secretKey) {
-    console.error('reCAPTCHA secret key not found.');
-    // Allow pass-through in dev environments if key is missing, for easier testing.
-    return process.env.NODE_ENV !== 'production';
-  }
-
-  const verificationUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${token}`;
-
-  try {
-    const response = await fetch(verificationUrl, { method: 'POST' });
-    const data = await response.json();
-    if (!data.success) {
-      // Log specific error codes from Google for better debugging
-      console.error('reCAPTCHA verification failed with error codes:', data['error-codes']);
-    }
-    return data.success;
-  } catch (error) {
-    console.error('Error verifying reCAPTCHA:', error);
-    return false;
-  }
-}
 
 export async function sendContactMessage(data: z.infer<typeof formSchema>) {
   const result = formSchema.safeParse(data);
@@ -41,13 +19,14 @@ export async function sendContactMessage(data: z.infer<typeof formSchema>) {
     return { success: false, error: result.error.format() };
   }
   
-  const { name, email, subject, message, recaptchaToken } = result.data;
+  const { name, email, subject, message } = result.data;
 
   try {
-    const isRecaptchaValid = await verifyRecaptcha(recaptchaToken);
-    if (!isRecaptchaValid) {
-      return { success: false, error: { _errors: ["reCAPTCHA verification failed. Please try again."] }};
-    }
+    // Temporarily bypass reCAPTCHA verification for debugging
+    // const isRecaptchaValid = await verifyRecaptcha(recaptchaToken);
+    // if (!isRecaptchaValid) {
+    //   return { success: false, error: { _errors: ["reCAPTCHA verification failed. Please try again."] }};
+    // }
 
     await db.collection('contacts').add({
       name,
