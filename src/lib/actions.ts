@@ -88,6 +88,7 @@ export async function sendContactMessage(data: z.infer<typeof formSchema>) {
 
   } catch (error) {
     console.error("Failed to send or store message:", error);
-    return { success: false, error: { _errors: ["An unexpected error occurred. Please try again later."] }};
+    const errorMessage = error instanceof Error ? error.message : "An unknown error occurred.";
+    return { success: false, error: { _errors: [ `Server error: ${errorMessage}` ] }};
   }
 }
