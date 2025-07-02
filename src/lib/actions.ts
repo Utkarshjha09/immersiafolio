@@ -25,6 +25,9 @@ async function verifyRecaptcha(token: string) {
   try {
     const response = await fetch(verificationUrl, { method: 'POST' });
     const data = await response.json();
+    if (!data.success) {
+      console.error('reCAPTCHA verification failed with error codes:', data['error-codes']);
+    }
     return data.success;
   } catch (error) {
     console.error('Error verifying reCAPTCHA:', error);

@@ -9,7 +9,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { sendContactMessage } from '@/lib/actions';
-import { useState, useTransition } from 'react';
+import { useRef, useTransition } from 'react';
 import { Loader2, Terminal } from 'lucide-react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
@@ -25,7 +25,7 @@ const formSchema = z.object({
 export function ContactForm() {
   const { toast } = useToast();
   const [isPending, startTransition] = useTransition();
-  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
   const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -39,6 +39,8 @@ export function ContactForm() {
     },
   });
 
+  const recaptchaToken = form.watch('recaptchaToken');
+
   function onSubmit(values: z.infer<typeof formSchema>) {
     startTransition(async () => {
       const result = await sendContactMessage(values);
@@ -48,6 +50,7 @@ export function ContactForm() {
           description: "Thanks for reaching out. I'll get back to you soon.",
         });
         form.reset();
+        recaptchaRef.current?.reset();
       } else {
         const errorMessage = result.error?._errors?.join(', ') || 'Something went wrong. Please try again.';
         toast({
@@ -55,12 +58,13 @@ export function ContactForm() {
           description: errorMessage,
           variant: 'destructive',
         });
+        form.setValue('recaptchaToken', '');
+        recaptchaRef.current?.reset();
       }
     });
   }
 
   const handleRecaptchaChange = (token: string | null) => {
-    setRecaptchaToken(token);
     form.setValue('recaptchaToken', token || '');
   };
 
@@ -123,6 +127,7 @@ export function ContactForm() {
               <FormItem>
                 <FormControl>
                   <ReCAPTCHA
+                    ref={recaptchaRef}
                     sitekey={siteKey}
                     onChange={handleRecaptchaChange}
                     theme="dark"
