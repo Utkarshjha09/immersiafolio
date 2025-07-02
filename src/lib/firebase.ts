@@ -6,6 +6,8 @@ if (!admin.apps.length) {
   admin.initializeApp({
     // When running on Firebase/Google Cloud, credentials are automatically discovered.
     // For local development, you need to be authenticated via the Firebase CLI.
+    // Explicitly setting the projectId can resolve some authentication issues.
+    projectId: 'immersiafolio',
   });
 }
 

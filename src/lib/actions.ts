@@ -14,6 +14,7 @@ async function verifyRecaptcha(token: string) {
   const secretKey = process.env.RECAPTCHA_SECRET_KEY;
   if (!secretKey) {
     console.error('reCAPTCHA secret key not found.');
+    // Allow pass-through in dev environments if key is missing, for easier testing.
     return process.env.NODE_ENV !== 'production';
   }
 
@@ -23,6 +24,7 @@ async function verifyRecaptcha(token: string) {
     const response = await fetch(verificationUrl, { method: 'POST' });
     const data = await response.json();
     if (!data.success) {
+      // Log specific error codes from Google for better debugging
       console.error('reCAPTCHA verification failed with error codes:', data['error-codes']);
     }
     return data.success;
@@ -41,13 +43,12 @@ export async function sendContactMessage(data: z.infer<typeof formSchema>) {
   
   const { name, email, subject, message, recaptchaToken } = result.data;
 
-  const isRecaptchaValid = await verifyRecaptcha(recaptchaToken);
-  if (!isRecaptchaValid) {
-    return { success: false, error: { _errors: ["reCAPTCHA verification failed. Please try again."] }};
-  }
-
   try {
-    // Temporarily removed Resend logic to focus on the Firestore issue.
+    const isRecaptchaValid = await verifyRecaptcha(recaptchaToken);
+    if (!isRecaptchaValid) {
+      return { success: false, error: { _errors: ["reCAPTCHA verification failed. Please try again."] }};
+    }
+
     await db.collection('contacts').add({
       name,
       email,
@@ -59,7 +60,7 @@ export async function sendContactMessage(data: z.infer<typeof formSchema>) {
     return { success: true, data: result.data };
 
   } catch (error) {
-    console.error("Failed to write to Firestore:", error);
+    console.error("Error in sendContactMessage:", error);
     const errorMessage = error instanceof Error ? error.message : "An unknown error occurred.";
     return { success: false, error: { _errors: [ `Server error: ${errorMessage}` ] }};
   }
