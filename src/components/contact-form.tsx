@@ -11,17 +11,20 @@ import { useToast } from '@/hooks/use-toast';
 import { sendContactMessage } from '@/lib/actions';
 import { useState, useTransition } from 'react';
 import { Loader2 } from 'lucide-react';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 const formSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
   email: z.string().email({ message: 'Please enter a valid email.' }),
   subject: z.string().min(2, { message: 'Subject must be at least 2 characters.' }),
   message: z.string().min(10, { message: 'Message must be at least 10 characters.' }),
+  recaptchaToken: z.string().min(1, { message: 'Please complete the reCAPTCHA.' }),
 });
 
 export function ContactForm() {
   const { toast } = useToast();
   const [isPending, startTransition] = useTransition();
+  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -30,6 +33,7 @@ export function ContactForm() {
       email: '',
       subject: '',
       message: '',
+      recaptchaToken: '',
     },
   });
 
@@ -43,14 +47,20 @@ export function ContactForm() {
         });
         form.reset();
       } else {
+        const errorMessage = result.error?._errors?.join(', ') || 'Something went wrong. Please try again.';
         toast({
           title: 'Error',
-          description: 'Something went wrong. Please try again.',
+          description: errorMessage,
           variant: 'destructive',
         });
       }
     });
   }
+
+  const handleRecaptchaChange = (token: string | null) => {
+    setRecaptchaToken(token);
+    form.setValue('recaptchaToken', token || '');
+  };
 
   return (
     <Form {...form}>
@@ -103,7 +113,23 @@ export function ContactForm() {
             </FormItem>
           )}
         />
-        <Button type="submit" className="w-full bg-amber-500 text-black hover:bg-amber-600" disabled={isPending}>
+        <FormField
+          control={form.control}
+          name="recaptchaToken"
+          render={() => (
+            <FormItem>
+              <FormControl>
+                <ReCAPTCHA
+                  sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+                  onChange={handleRecaptchaChange}
+                  theme="dark"
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <Button type="submit" className="w-full bg-amber-500 text-black hover:bg-amber-600" disabled={isPending || !recaptchaToken}>
           {isPending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : 'Send Message'}
         </Button>
       </form>
