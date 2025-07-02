@@ -1,12 +1,12 @@
 import admin from 'firebase-admin';
 
 // Initialize Firebase Admin SDK
-// This checks if the app is already initialized to prevent errors.
 if (!admin.apps.length) {
   admin.initializeApp({
-    // When running on Firebase/Google Cloud, credentials are automatically discovered.
-    // For local development, you need to be authenticated via the Firebase CLI.
-    // Explicitly setting the projectId can resolve some authentication issues.
+    // Force the SDK to use Application Default Credentials.
+    // This can resolve authentication issues in some environments.
+    credential: admin.credential.applicationDefault(),
+    // Explicitly setting the projectId can also help.
     projectId: 'immersiafolio',
   });
 }
