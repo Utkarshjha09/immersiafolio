@@ -10,8 +10,9 @@ import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { sendContactMessage } from '@/lib/actions';
 import { useState, useTransition } from 'react';
-import { Loader2 } from 'lucide-react';
+import { Loader2, Terminal } from 'lucide-react';
 import ReCAPTCHA from 'react-google-recaptcha';
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 
 const formSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
@@ -132,11 +133,15 @@ export function ContactForm() {
             )}
           />
         ) : (
-          <div className="p-4 rounded-md bg-destructive/10 border border-destructive/50 text-sm text-destructive">
-            To enable this contact form, please add your reCAPTCHA site key to the .env file as `NEXT_PUBLIC_RECAPTCHA_SITE_KEY`.
-          </div>
+          <Alert variant="destructive">
+            <Terminal className="h-4 w-4" />
+            <AlertTitle>Configuration Required</AlertTitle>
+            <AlertDescription>
+              To enable this contact form, please add your reCAPTCHA site key to the `.env` file as `NEXT_PUBLIC_RECAPTCHA_SITE_KEY`.
+            </AlertDescription>
+          </Alert>
         )}
-        <Button type="submit" className="w-full bg-amber-500 text-black hover:bg-amber-600" disabled={isPending || !recaptchaToken || !siteKey}>
+        <Button type="submit" className="w-full" disabled={isPending || !recaptchaToken || !siteKey}>
           {isPending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : 'Send Message'}
         </Button>
       </form>
