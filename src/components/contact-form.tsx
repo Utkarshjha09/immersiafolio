@@ -25,6 +25,7 @@ export function ContactForm() {
   const { toast } = useToast();
   const [isPending, startTransition] = useTransition();
   const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
+  const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -113,23 +114,29 @@ export function ContactForm() {
             </FormItem>
           )}
         />
-        <FormField
-          control={form.control}
-          name="recaptchaToken"
-          render={() => (
-            <FormItem>
-              <FormControl>
-                <ReCAPTCHA
-                  sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
-                  onChange={handleRecaptchaChange}
-                  theme="dark"
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <Button type="submit" className="w-full bg-amber-500 text-black hover:bg-amber-600" disabled={isPending || !recaptchaToken}>
+        {siteKey ? (
+          <FormField
+            control={form.control}
+            name="recaptchaToken"
+            render={() => (
+              <FormItem>
+                <FormControl>
+                  <ReCAPTCHA
+                    sitekey={siteKey}
+                    onChange={handleRecaptchaChange}
+                    theme="dark"
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        ) : (
+          <div className="p-4 rounded-md bg-destructive/10 border border-destructive/50 text-sm text-destructive">
+            To enable this contact form, please add your reCAPTCHA site key to the .env file as `NEXT_PUBLIC_RECAPTCHA_SITE_KEY`.
+          </div>
+        )}
+        <Button type="submit" className="w-full bg-amber-500 text-black hover:bg-amber-600" disabled={isPending || !recaptchaToken || !siteKey}>
           {isPending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : 'Send Message'}
         </Button>
       </form>
