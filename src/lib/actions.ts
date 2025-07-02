@@ -14,7 +14,7 @@ async function verifyRecaptcha(token: string) {
   const secretKey = process.env.RECAPTCHA_SECRET_KEY;
   if (!secretKey) {
     console.error("RECAPTCHA_SECRET_KEY is not set in .env file.");
-    return { success: false, error: "reCAPTCHA secret key is not configured on the server." };
+    return { success: false, error: "The server is not configured for reCAPTCHA." };
   }
   
   try {
@@ -68,7 +68,7 @@ export async function sendContactMessage(data: z.infer<typeof formSchema>) {
       createdAt: new Date(),
     });
 
-    return { success: true, data: result.data };
+    return { success: true };
 
   } catch (error) {
     console.error("Error writing to Firestore:", error);

@@ -1,13 +1,10 @@
 import admin from 'firebase-admin';
 
-// Initialize Firebase Admin SDK
+// This is the recommended way to initialize the Admin SDK in Google Cloud environments like App Hosting.
+// It automatically uses the service account associated with the environment.
 if (!admin.apps.length) {
   admin.initializeApp({
-    // Force the SDK to use Application Default Credentials.
-    // This can resolve authentication issues in some environments.
     credential: admin.credential.applicationDefault(),
-    // Explicitly setting the projectId can also help.
-    projectId: 'immersiafolio',
   });
 }
 
