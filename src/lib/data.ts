@@ -106,4 +106,13 @@ export const certificates: Certificate[] = [
     imageHint: 'matlab certificate',
     certificateUrl: 'https://drive.google.com/file/d/1lpgzSL4-xrihY9aIIiRQsSF28upV7_mU/view?usp=drive_link',
   },
+  {
+    title: 'Introduction To Internet Of Things',
+    issuer: 'NPTEL',
+    date: 'Jan-Apr 2025',
+    credentialId: 'Roll No: NPTEL25CS44S452400580',
+    imageUrl: '/Introduction To Internet Of Things.png',
+    imageHint: 'iot certificate',
+    certificateUrl: '#',
+  },
 ];
