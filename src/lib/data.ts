@@ -87,7 +87,7 @@ export const certificates: Certificate[] = [
     date: 'Expires: 30/03/2025',
     imageUrl: '/Core Signal Processing Techniques in MATLAB.png',
     imageHint: 'matlab certificate',
-    certificateUrl: '#',
+    certificateUrl: 'https://drive.google.com/file/d/1Ndd7iH5ZB9Psbgu9pHbPd4-m_LKXM8Jq/view?usp=drive_link',
   },
   {
     title: 'Python Essentials Hindi',
