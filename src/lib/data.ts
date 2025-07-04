@@ -52,3 +52,50 @@ export const socialLinks = {
   instagram: 'https://www.instagram.com/utkarshjha03?igsh=MXM5OHl2eXBrZWIwdQ==',
   portfolio: 'https://leetcode.com/u/W03VazWUr9/',
 };
+
+export type Certificate = {
+  title: string;
+  issuer: string;
+  date: string;
+  credentialId?: string;
+  imageUrl: string;
+  imageHint: string;
+  certificateUrl: string;
+};
+
+export const certificates: Certificate[] = [
+  {
+    title: 'Signal Processing with MATLAB',
+    issuer: 'MathWorks',
+    date: 'Expires: 07/02/2025',
+    imageUrl: '/Signal Processing with MATLAB.png',
+    imageHint: 'matlab certificate',
+    certificateUrl: '#',
+  },
+  {
+    title: 'Fundamentals of AI and ML',
+    issuer: 'Vityarthi',
+    date: 'Issued: 30/04/2024',
+    credentialId: 'ID: 23BEC10088',
+    imageUrl: '/Fundamentals of AI and ML.png',
+    imageHint: 'ai ml certificate',
+    certificateUrl: '#',
+  },
+  {
+    title: 'Core Signal Processing Techniques in MATLAB',
+    issuer: 'MathWorks',
+    date: 'Expires: 30/03/2025',
+    imageUrl: '/Core Signal Processing Techniques in MATLAB.png',
+    imageHint: 'matlab certificate',
+    certificateUrl: '#',
+  },
+  {
+    title: 'Python Essentials Hindi',
+    issuer: 'Vityarthi',
+    date: 'Issued: 25/12/2023',
+    credentialId: 'No: 100618484274170661',
+    imageUrl: '/Python Essentials Hindi.png',
+    imageHint: 'python certificate',
+    certificateUrl: '#',
+  },
+];
