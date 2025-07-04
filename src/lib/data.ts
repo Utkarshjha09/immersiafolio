@@ -70,7 +70,7 @@ export const certificates: Certificate[] = [
     date: 'Expires: 07/02/2025',
     imageUrl: '/Signal Processing with MATLAB.png',
     imageHint: 'matlab certificate',
-    certificateUrl: '#',
+    certificateUrl: 'https://drive.google.com/file/d/1UfPib41vq8-hV9ljPU1xxHPi8dsC5gni/view?usp=drive_link',
   },
   {
     title: 'Fundamentals of AI and ML',
@@ -79,7 +79,7 @@ export const certificates: Certificate[] = [
     credentialId: 'ID: 23BEC10088',
     imageUrl: '/Fundamentals of AI and ML.png',
     imageHint: 'ai ml certificate',
-    certificateUrl: '#',
+    certificateUrl: 'https://drive.google.com/file/d/1O989EYM_qsTVQNcs6-WiwNvMu13CthhS/view?usp=drive_link',
   },
   {
     title: 'Core Signal Processing Techniques in MATLAB',
@@ -96,6 +96,14 @@ export const certificates: Certificate[] = [
     credentialId: 'No: 100618484274170661',
     imageUrl: '/Python Essentials Hindi.png',
     imageHint: 'python certificate',
-    certificateUrl: '#',
+    certificateUrl: 'https://drive.google.com/file/d/1p2k4xHvLRDxc0ZEVlwPXlb1_5F2zUZg7/view?usp=drive_link',
+  },
+  {
+    title: 'MATLAB Fundamentals',
+    issuer: 'MathWorks',
+    date: 'Issued: 23/09/2024',
+    imageUrl: '/MATLAB Fundamentals.png',
+    imageHint: 'matlab certificate',
+    certificateUrl: 'https://drive.google.com/file/d/1lpgzSL4-xrihY9aIIiRQsSF28upV7_mU/view?usp=drive_link',
   },
 ];
