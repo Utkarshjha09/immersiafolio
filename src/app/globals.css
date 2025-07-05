@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -43,7 +39,7 @@ body {
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
   .dark {
-    --background: 215 12% 17%;
+    --background: 225 29% 21%;
     --foreground: 0 0% 98%;
     --card: 215 12% 22%;
     --card-foreground: 0 0% 98%;
@@ -83,7 +79,10 @@ body {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    background: #283048; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #859398, #283048); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #859398, #283048); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    @apply text-foreground;
   }
 }
 

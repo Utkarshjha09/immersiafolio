@@ -113,6 +113,6 @@ export const certificates: Certificate[] = [
     credentialId: 'Roll No: NPTEL25CS44S452400580',
     imageUrl: '/Introduction To Internet Of Things.png',
     imageHint: 'iot certificate',
-    certificateUrl: '#',
+    certificateUrl: 'https://drive.google.com/file/d/1hfHIYjY9IW7ipjv_-yfagdyTkqI3FQp7/view?usp=drive_link',
   },
 ];

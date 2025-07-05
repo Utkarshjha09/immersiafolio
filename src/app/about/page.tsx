@@ -9,7 +9,7 @@ const aboutImages = [
 
 export default function AboutPage() {
   return (
-    <div className="bg-background">
+    <div>
       <div className="container mx-auto max-w-6xl px-4 md:px-6 py-20 lg:py-32">
         <div className="grid md:grid-cols-2 gap-16 items-start">
           <div className="space-y-6 text-lg text-foreground/80">
