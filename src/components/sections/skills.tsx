@@ -1,3 +1,4 @@
+
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Code, Database, Globe, Rocket, Terminal, Braces, Cpu, PenTool, BrainCircuit, Bot } from "lucide-react";
@@ -6,12 +7,12 @@ const skillsData = [
   {
     category: "Languages",
     icon: <Code className="h-8 w-8 text-accent" />,
-    skills: ["Java", "Python", "JavaScript", "TypeScript", "HTML/CSS"],
+    skills: ["Java", "Python", "JavaScript", "HTML/CSS"],
   },
   {
     category: "MERN Stack",
     icon: <Globe className="h-8 w-8 text-accent" />,
-    skills: ["React", "Next.js", "Node.js", "Express.js", "MongoDB", "Redux"],
+    skills: ["React", "Next.js", "Node.js", "Express.js", "MongoDB"],
   },
   {
     category: "Data Science & ML",
@@ -31,7 +32,7 @@ const skillsData = [
   {
     category: "Concepts",
     icon: <Rocket className="h-8 w-8 text-accent" />,
-    skills: ["REST APIs", "Data Structures", "Agile Methodologies"],
+    skills: ["REST APIs", "Agile Methodologies"],
   }
 ];
 
