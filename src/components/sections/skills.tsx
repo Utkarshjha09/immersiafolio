@@ -32,7 +32,7 @@ const skillsData = [
   {
     category: "Concepts",
     icon: <Rocket className="h-8 w-8 text-accent" />,
-    skills: ["REST APIs", "Agile Methodologies"],
+    skills: ["REST APIs", "Data Structures & Algorithms", "Object-Oriented Programming"],
   }
 ];
 
