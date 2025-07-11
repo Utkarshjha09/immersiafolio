@@ -7,6 +7,8 @@ import { FileText, Github } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export function ProjectCard({ project, index }: { project: Project, index: number }) {
+  const readmeLink = project.readmeUrl || `${project.sourceUrl}#readme`;
+
   return (
     <div className="[perspective:1000px]">
         <Card className={cn(
@@ -36,9 +38,9 @@ export function ProjectCard({ project, index }: { project: Project, index: numbe
         </CardContent>
         <CardFooter>
             <div className="flex gap-4">
-            {project.sourceUrl && (
+            {project.readmeUrl && (
                 <Button asChild>
-                <a href={project.sourceUrl} target="_blank" rel="noopener noreferrer">
+                <a href={readmeLink} target="_blank" rel="noopener noreferrer">
                     <FileText className="mr-2 h-4 w-4" /> README
                 </a>
                 </Button>
