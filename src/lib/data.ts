@@ -12,9 +12,9 @@ export const projects: Project[] = [
   {
     title: 'ESP32-Blynk-Notification-System',
     description: 'An IoT project utilizing an ESP32 microcontroller and the Blynk platform to send real-time notifications based on sensor data or events.',
-    imageUrl: 'https://placehold.co/1200x800.png',
+    imageUrl: '/ESP32-Blynk-Notification-System.png',
     imageHint: 'iot notification',
-    tags: ['ESP32', 'Blynk', 'IoT', 'Arduino'],
+    tags: ['ESP32', 'Blynk', 'IoT', 'Arduino IDE'],
     sourceUrl: '#',
   },
   {
@@ -23,23 +23,6 @@ export const projects: Project[] = [
     imageUrl: 'https://placehold.co/1200x800.png',
     imageHint: 'security camera',
     tags: ['Raspberry Pi', 'Python', 'OpenCV', 'IoT', 'Telegram API', 'Machine Learning'],
-    sourceUrl: '#',
-  },
-  {
-    title: 'QuantumLeap CRM',
-    description: 'A futuristic CRM dashboard designed for optimal user experience and data visualization, built with Next.js and custom UI components.',
-    imageUrl: 'https://placehold.co/1200x800.png',
-    imageHint: 'futuristic dashboard',
-    tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Recharts'],
-    liveUrl: '#',
-    sourceUrl: '#',
-  },
-  {
-    title: 'ChronoPost',
-    description: 'An AI-powered content scheduling tool that helps creators optimize their posting times across multiple platforms for maximum engagement.',
-    imageUrl: 'https://placehold.co/1200x800.png',
-    imageHint: 'content scheduler',
-    tags: ['AI/ML', 'Python', 'React', 'Node.js'],
     sourceUrl: '#',
   },
 ];
