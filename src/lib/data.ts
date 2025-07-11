@@ -10,11 +10,19 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: 'ESP32-Blynk-Notification-System',
+    description: 'An IoT project utilizing an ESP32 microcontroller and the Blynk platform to send real-time notifications based on sensor data or events.',
+    imageUrl: 'https://placehold.co/1200x800.png',
+    imageHint: 'iot notification',
+    tags: ['ESP32', 'Blynk', 'IoT', 'Arduino'],
+    sourceUrl: '#',
+  },
+  {
     title: 'Security System with Face Recognition',
-    description: 'An IoT security system using a Raspberry Pi 4. When the IR sensor detects a person, the camera captures their image and performs facial recognition. A notification is sent via Telegram with the person\'s identity and image, or an "Unknown person" alert if no match is found.',
+    description: 'An IoT security system using a Raspberry Pi 4. When an IR sensor detects a person, the camera captures their image and performs facial recognition. If a match is found, a Telegram notification is sent with the person\'s name and image; otherwise, an "Unknown person" alert is sent.',
     imageUrl: 'https://placehold.co/1200x800.png',
     imageHint: 'security camera',
-    tags: ['Raspberry Pi', 'Python', 'OpenCV', 'IoT', 'Telegram API'],
+    tags: ['Raspberry Pi', 'Python', 'OpenCV', 'IoT', 'Telegram API', 'Machine Learning'],
     sourceUrl: '#',
   },
   {
@@ -27,28 +35,11 @@ export const projects: Project[] = [
     sourceUrl: '#',
   },
   {
-    title: 'NovaSphere Social',
-    description: 'A decentralized social media platform concept with a focus on privacy and user data ownership, featuring a sleek, modern interface.',
-    imageUrl: 'https://placehold.co/1200x800.png',
-    imageHint: 'social media',
-    tags: ['React', 'GraphQL', 'Web3', 'Figma'],
-    liveUrl: '#',
-  },
-  {
     title: 'ChronoPost',
     description: 'An AI-powered content scheduling tool that helps creators optimize their posting times across multiple platforms for maximum engagement.',
     imageUrl: 'https://placehold.co/1200x800.png',
     imageHint: 'content scheduler',
     tags: ['AI/ML', 'Python', 'React', 'Node.js'],
-    sourceUrl: '#',
-  },
-    {
-    title: 'Project Apex',
-    description: 'An e-commerce platform specializing in high-performance gear, featuring a 3D product viewer and a streamlined checkout process.',
-    imageUrl: 'https://placehold.co/1200x800.png',
-    imageHint: 'ecommerce product',
-    tags: ['Vue.js', 'Three.js', 'Stripe', 'Node.js'],
-    liveUrl: '#',
     sourceUrl: '#',
   },
 ];
