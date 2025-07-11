@@ -15,15 +15,15 @@ export const projects: Project[] = [
     imageUrl: '/ESP32-Blynk-Notification-System.png',
     imageHint: 'iot notification',
     tags: ['ESP32', 'Blynk', 'IoT', 'Arduino IDE'],
-    sourceUrl: '#',
+    sourceUrl: 'https://github.com/Utkarshjha09/ESP32-Blynk-Notification-System',
   },
   {
     title: 'Security System with Face Recognition',
     description: 'An IoT security system using a Raspberry Pi 4. When an IR sensor detects a person, the camera captures their image and performs facial recognition. If a match is found, a Telegram notification is sent with the person\'s name and image; otherwise, an "Unknown person" alert is sent.',
-    imageUrl: 'https://placehold.co/1200x800.png',
+    imageUrl: '/Security System with Face Recognition.png',
     imageHint: 'security camera',
     tags: ['Raspberry Pi', 'Python', 'OpenCV', 'IoT', 'Telegram API', 'Machine Learning'],
-    sourceUrl: '#',
+    sourceUrl: 'https://github.com/Utkarshjha09/FaceRecognitionSystem/blob/main/README.md',
   },
 ];
 
