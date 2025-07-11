@@ -3,7 +3,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/componen
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import type { Project } from '@/lib/data';
-import { ExternalLink, Github } from 'lucide-react';
+import { FileText, Github } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export function ProjectCard({ project, index }: { project: Project, index: number }) {
@@ -36,10 +36,10 @@ export function ProjectCard({ project, index }: { project: Project, index: numbe
         </CardContent>
         <CardFooter>
             <div className="flex gap-4">
-            {project.liveUrl && (
+            {project.sourceUrl && (
                 <Button asChild>
-                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="mr-2 h-4 w-4" /> Live Demo
+                <a href={project.sourceUrl} target="_blank" rel="noopener noreferrer">
+                    <FileText className="mr-2 h-4 w-4" /> README
                 </a>
                 </Button>
             )}
