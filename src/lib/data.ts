@@ -10,6 +10,14 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: 'Security System with Face Recognition',
+    description: 'An IoT security system using a Raspberry Pi 4. When the IR sensor detects a person, the camera captures their image and performs facial recognition. A notification is sent via Telegram with the person\'s identity and image, or an "Unknown person" alert if no match is found.',
+    imageUrl: 'https://placehold.co/1200x800.png',
+    imageHint: 'security camera',
+    tags: ['Raspberry Pi', 'Python', 'OpenCV', 'IoT', 'Telegram API'],
+    sourceUrl: '#',
+  },
+  {
     title: 'QuantumLeap CRM',
     description: 'A futuristic CRM dashboard designed for optimal user experience and data visualization, built with Next.js and custom UI components.',
     imageUrl: 'https://placehold.co/1200x800.png',
