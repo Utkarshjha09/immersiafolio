@@ -34,7 +34,9 @@ export default function Hero() {
                 />
               </div>
               <p className="max-w-[600px] text-muted-foreground md:text-lg">
-                Hello! I'm Utkarsh Jha, a passionate and versatile developer with expertise across multiple domains. My skills range from creating responsive and dynamic websites as a MERN Stack Developer to designing complex digital circuits with Verilog. I also build intelligent hardware as an Embedded Systems Engineer, and uncover insights from data as a Data Scientist. Complementing my technical skills is a keen eye for UI/UX Design, ensuring every project is not just powerful, but also user-friendly and aesthetically pleasing. You can add more about your journey here!
+                I'm a versatile developer with expertise in Data Science, MERN Stack, and Embedded Systems. From analyzing data with Python to building web apps with React and Node.js, and developing hardware with Arduino and Verilog—I enjoy working across the full tech stack.
+                <br /><br />
+                With skills in Machine Learning, UI/UX, and system-level programming, I build efficient, scalable solutions using tools like Git, VS Code, and Postman. I'm always eager to solve problems and learn new technologies that drive real-world impact.
               </p>
             </div>
             <div className="flex flex-col gap-4 sm:flex-row">
