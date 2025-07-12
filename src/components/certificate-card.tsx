@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
+import { GooeyButton } from '@/components/ui/gooey-button';
 import type { Certificate } from '@/lib/data';
 import { Award } from 'lucide-react';
 
@@ -28,11 +28,11 @@ export function CertificateCard({ certificate }: { certificate: Certificate }) {
         )}
       </CardContent>
       <CardFooter>
-        <Button asChild className="w-full">
+        <GooeyButton asChild className="w-full">
           <a href={certificate.certificateUrl} target="_blank" rel="noopener noreferrer">
             <Award className="mr-2 h-4 w-4" /> View Certificate
           </a>
-        </Button>
+        </GooeyButton>
       </CardFooter>
     </Card>
   );

@@ -1,0 +1,36 @@
+.gooey-button {
+    position: relative;
+    overflow: hidden;
+    /* Ensure child elements are positioned correctly */
+    transform: translate3d(0, 0, 0); 
+}
+
+.particle {
+  --time: 0.7s;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  animation: particle var(--time) ease-out forwards;
+  pointer-events: none;
+}
+
+.point {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--color);
+  opacity: 1;
+}
+
+@keyframes particle {
+  0% {
+    transform: translate(-50%, -50%) translate(var(--start-x), var(--start-y)) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) translate(var(--end-x), var(--end-y)) scale(0);
+    opacity: 0;
+  }
+}
