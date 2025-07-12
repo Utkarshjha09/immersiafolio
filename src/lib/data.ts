@@ -16,7 +16,7 @@ export const projects: Project[] = [
     imageHint: 'iot notification',
     tags: ['ESP32', 'Blynk', 'IoT', 'Arduino IDE'],
     sourceUrl: 'https://github.com/Utkarshjha09/ESP32-Blynk-Notification-System.git',
-    readmeUrl: 'https://github.com/Utkarshjha09/ESP32-Blynk-Notification-System/blob/main/README.md',
+    readmeUrl: 'https://github.com/Utkarshjha09/ESP32-Blynk-Notification-System/blob/6f81608273ba8abc39f4ff05e0ab4b523975e01c/README.md',
   },
   {
     title: 'Security System with Face Recognition',
@@ -25,7 +25,7 @@ export const projects: Project[] = [
     imageHint: 'security camera',
     tags: ['Raspberry Pi', 'Python', 'OpenCV', 'IoT', 'Telegram API', 'Machine Learning'],
     sourceUrl: 'https://github.com/Utkarshjha09/FaceRecognitionSystem.git',
-    readmeUrl: 'https://github.com/Utkarshjha09/FaceRecognitionSystem/blob/main/README.md',
+    readmeUrl: 'https://github.com/Utkarshjha09/FaceRecognitionSystem/blob/39e2ce8320e3f5844dedf97257229e28f56e5c71/README.md',
   },
 ];
 

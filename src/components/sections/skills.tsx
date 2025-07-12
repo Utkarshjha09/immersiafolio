@@ -7,7 +7,7 @@ const skillsData = [
   {
     category: "Languages",
     icon: <Code className="h-8 w-8 text-accent" />,
-    skills: ["Java", "Python", "JavaScript", "HTML/CSS"],
+    skills: ["Java", "Python", "JavaScript", "HTML/CSS", "C"],
   },
   {
     category: "MERN Stack",
