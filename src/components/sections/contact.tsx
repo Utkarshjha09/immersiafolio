@@ -1,9 +1,17 @@
 import { ContactForm } from '@/components/contact-form';
 import { socialLinks } from '@/lib/data';
 import { Button } from '@/components/ui/button';
-import { Code, Github, Instagram, Linkedin, Mail, Phone } from 'lucide-react';
+import { Code, Github, Instagram, Linkedin, Mail, Phone, MessageCircle } from 'lucide-react';
 import Link from 'next/link';
 import TrueFocus from '../true-focus';
+
+const CodeChefIcon = () => (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-6 w-6">
+    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
+    <path d="M7 12H17" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+    <path d="M12 7V17" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+    </svg>
+  );
 
 export default function Contact() {
   return (
@@ -23,7 +31,7 @@ export default function Contact() {
           <div className="flex flex-col justify-start space-y-6 text-left">
             <div className="space-y-2">
               <h3 className="text-2xl sm:text-3xl font-bold">Let&apos;s Work Together</h3>
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground text-justify">
                 I&apos;m always interested in new opportunities and exciting projects.
               </p>
             </div>
@@ -43,7 +51,7 @@ export default function Contact() {
                     </div>
                 </div>
             </div>
-            <div className="flex items-center gap-4 pt-4">
+            <div className="flex items-center gap-4 pt-4 flex-wrap">
               <Button asChild variant="default" size="icon" className="rounded-full w-12 h-12">
                 <Link href={socialLinks.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                     <Github className="h-6 w-6" />
@@ -60,8 +68,18 @@ export default function Contact() {
                 </Link>
               </Button>
               <Button asChild variant="default" size="icon" className="rounded-full w-12 h-12">
-                 <Link href={socialLinks.portfolio} target="_blank" rel="noopener noreferrer" aria-label="Portfolio">
+                 <Link href={socialLinks.leetcode} target="_blank" rel="noopener noreferrer" aria-label="LeetCode">
                     <Code className="h-6 w-6" />
+                </Link>
+              </Button>
+              <Button asChild variant="default" size="icon" className="rounded-full w-12 h-12">
+                <Link href={socialLinks.codechef} target="_blank" rel="noopener noreferrer" aria-label="CodeChef">
+                    <CodeChefIcon />
+                </Link>
+              </Button>
+              <Button asChild variant="default" size="icon" className="rounded-full w-12 h-12">
+                <Link href={socialLinks.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                    <MessageCircle className="h-6 w-6" />
                 </Link>
               </Button>
             </div>

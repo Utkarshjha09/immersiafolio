@@ -10,15 +10,6 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: 'ESP32-Blynk-Notification-System',
-    description: 'An IoT project utilizing an ESP32 microcontroller and the Blynk platform to send real-time notifications based on sensor data or events.',
-    imageUrl: '/ESP32-Blynk-Notification-System.png',
-    imageHint: 'iot notification',
-    tags: ['ESP32', 'Blynk', 'IoT', 'Arduino IDE'],
-    sourceUrl: 'https://github.com/Utkarshjha09/ESP32-Blynk-Notification-System.git',
-    readmeUrl: 'https://github.com/Utkarshjha09/ESP32-Blynk-Notification-System/blob/6f81608273ba8abc39f4ff05e0ab4b523975e01c/README.md',
-  },
-  {
     title: 'Security System with Face Recognition',
     description: 'An IoT security system using a Raspberry Pi 4. When an IR sensor detects a person, the camera captures their image and performs facial recognition. If a match is found, a Telegram notification is sent with the person\'s name and image; otherwise, an "Unknown person" alert is sent.',
     imageUrl: '/Security System with Face Recognition.png',
@@ -27,14 +18,24 @@ export const projects: Project[] = [
     sourceUrl: 'https://github.com/Utkarshjha09/FaceRecognitionSystem.git',
     readmeUrl: 'https://github.com/Utkarshjha09/FaceRecognitionSystem/blob/39e2ce8320e3f5844dedf97257229e28f56e5c71/README.md',
   },
+  {
+    title: 'ESP32-Blynk-Notification-System',
+    description: 'An IoT project utilizing an ESP32 microcontroller and the Blynk platform to send real-time notifications based on sensor data or events.',
+    imageUrl: '/ESP32-Blynk-Notification-System.png',
+    imageHint: 'iot notification',
+    tags: ['ESP32', 'Blynk', 'IoT', 'Arduino IDE'],
+    sourceUrl: 'https://github.com/Utkarshjha09/ESP32-Blynk-Notification-System.git',
+    readmeUrl: 'https://github.com/Utkarshjha09/ESP32-Blynk-Notification-System/blob/6f81608273ba8abc39f4ff05e0ab4b523975e01c/README.md',
+  },
 ];
 
 export const socialLinks = {
   github: 'https://github.com/Utkarshjha09',
   linkedin: 'https://www.linkedin.com/in/utkarshjha03/',
-  twitter: '#',
   instagram: 'https://www.instagram.com/utkarshjha03?igsh=MXM5OHl2eXBrZWIwdQ==',
-  portfolio: 'https://leetcode.com/u/W03VazWUr9/',
+  leetcode: 'https://leetcode.com/u/W03VazWUr9/',
+  codechef: 'https://www.codechef.com/users/utkarshjha09',
+  whatsapp: 'https://wa.me/917061771437',
 };
 
 export type Certificate = {

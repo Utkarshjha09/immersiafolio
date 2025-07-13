@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/dialog"
 import { Mail, MessageCircle } from 'lucide-react';
 import ProfileCard from '../profile-card';
+import { socialLinks } from '@/lib/data';
 
 
 export default function Hero() {
@@ -25,7 +26,7 @@ export default function Hero() {
               <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl font-headline">
                 Utkarsh Jha
               </h1>
-              <ShinyText className="text-lg">Data Scientist | Data Analyst | MERN Stack Developer | Embedded</ShinyText>
+              <ShinyText className="text-lg sm:text-xl">Data Scientist | Data Analyst | MERN Stack Developer | Embedded</ShinyText>
               <div className="text-xl md:text-2xl font-semibold">
                 <Typewriter 
                   strings={["MERN Stack Developer", "Verilog Expert", "Embedded Systems Engineer", "Data Scientist", "UI/UX Designer"]}
@@ -34,7 +35,7 @@ export default function Hero() {
                 />
               </div>
               <p className="max-w-[600px] text-muted-foreground md:text-lg text-justify">
-                I'm a versatile developer with expertise in Data Science, MERN Stack, and Embedded Systems. From analyzing data with Python to building web apps with React and Node.js, and developing hardware with Arduino and Verilog—I enjoy working across the full tech stack.
+              I'm a versatile developer with expertise in Data Science, MERN Stack, and Embedded Systems. From analyzing data with Python to building web apps with React and Node.js, and developing hardware with Arduino and Verilog—I enjoy working across the full tech stack.
                 <br /><br />
                 With skills in Machine Learning, UI/UX, and system-level programming, I build efficient, scalable solutions using tools like Git, VS Code, and Postman. I'm always eager to solve problems and learn new technologies that drive real-world impact.
               </p>
@@ -70,7 +71,7 @@ export default function Hero() {
                             </a>
                         </Button>
                          <Button asChild variant="secondary">
-                            <a href="https://wa.me/7061771437" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                            <a href={socialLinks.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                                 <MessageCircle className="h-5 w-5" />
                                 WhatsApp
                             </a>
