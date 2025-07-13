@@ -1,6 +1,5 @@
 'use server';
 import { z } from 'zod';
-import { db } from './firebase';
 import nodemailer from 'nodemailer';
 
 const formSchema = z.object({
@@ -106,7 +105,8 @@ export async function sendContactMessage(data: z.infer<typeof formSchema>) {
       subject: 'Thank you for your message!',
       html: `
         <p>Hi ${name},</p>
-        <p>Thank you for contacting me. I have received your message and will get back to you as soon as possible.</p>
+        <p>Thank you for reaching out! I've received your message and truly appreciate your time and input. In the meantime, feel free to check out more about us or follow us on social media.</p>
+        <p>Thanks again, and have a great day!</p>
         <p>Best regards,<br/>Utkarsh Jha</p>
       `,
     });
