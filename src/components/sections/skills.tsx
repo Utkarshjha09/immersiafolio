@@ -41,7 +41,7 @@ export default function Skills() {
     <section id="skills" className="w-full py-20 lg:py-32 border-t bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center text-center mb-12">
-          <h2 className="text-4xl font-headline font-bold tracking-tight sm:text-5xl">My Technical Skills</h2>
+          <h2 className="text-3xl sm:text-4xl font-headline font-bold tracking-tight md:text-5xl">My Technical Skills</h2>
           <p className="mt-4 max-w-2xl text-muted-foreground md:text-xl/relaxed">
             A versatile developer with a passion for building robust applications and exploring diverse technologies.
           </p>
@@ -51,7 +51,7 @@ export default function Skills() {
             <Card key={category.category} className="hover:shadow-lg hover:shadow-accent/10 transition-shadow duration-300">
               <CardHeader className="flex flex-row items-center gap-4 pb-4">
                 {category.icon}
-                <CardTitle className="font-headline text-2xl">{category.category}</CardTitle>
+                <CardTitle className="font-headline text-xl sm:text-2xl">{category.category}</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">

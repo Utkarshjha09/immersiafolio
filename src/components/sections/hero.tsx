@@ -17,7 +17,7 @@ import ProfileCard from '../profile-card';
 
 export default function Hero() {
   return (
-    <section id="about" className="w-full py-20 lg:py-32">
+    <section id="about" className="w-full py-16 lg:py-32">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid gap-10 lg:grid-cols-2">
           <div className="flex flex-col justify-center space-y-6">
@@ -48,10 +48,10 @@ export default function Hero() {
               </Button>
             </div>
           </div>
-          <div className="flex items-center justify-center min-h-[480px]">
+          <div className="flex items-center justify-center min-h-[400px] sm:min-h-[480px]">
              <Dialog>
                 <DialogTrigger asChild>
-                    <div className="cursor-pointer">
+                    <div className="cursor-pointer transform scale-90 sm:scale-100">
                         <ProfileCard />
                     </div>
                 </DialogTrigger>

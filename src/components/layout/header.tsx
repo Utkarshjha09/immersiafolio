@@ -27,8 +27,8 @@ export default function Header() {
     <header className="w-full border-b bg-background">
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex flex-col">
-          <span className="text-xl font-bold font-headline">Utkarsh Jha</span>
-          <ShinyText className="text-sm">Data Scientist | Data Analyst | MERN Stack Developer | Embedded</ShinyText>
+          <span className="text-lg sm:text-xl font-bold font-headline">Utkarsh Jha</span>
+          <ShinyText className="text-xs sm:text-sm">Data Scientist | Data Analyst | MERN Stack Developer | Embedded</ShinyText>
         </Link>
         
         {isMobile ? (

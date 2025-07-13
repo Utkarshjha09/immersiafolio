@@ -40,7 +40,7 @@ export const Timeline = ({ items }: TimelineProps) => {
         {items.map((item, index) => (
           <motion.div
             key={index}
-            className="relative pl-10"
+            className="relative pl-8 sm:pl-10"
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: true, amount: 0.5 }}
@@ -50,14 +50,14 @@ export const Timeline = ({ items }: TimelineProps) => {
             
             <motion.div 
               variants={cardVariants}
-              className="p-6 rounded-lg border bg-card text-card-foreground shadow-sm"
+              className="p-4 sm:p-6 rounded-lg border bg-card text-card-foreground shadow-sm"
             >
-              <div className="flex items-baseline justify-between">
-                <h3 className="font-headline text-xl font-bold text-foreground">{item.title}</h3>
-                <time className="text-sm font-medium text-muted-foreground">{item.date}</time>
+              <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between">
+                <h3 className="font-headline text-lg sm:text-xl font-bold text-foreground">{item.title}</h3>
+                <time className="text-sm font-medium text-muted-foreground mt-1 sm:mt-0">{item.date}</time>
               </div>
               <p className="mt-1 text-md font-semibold text-primary">{item.subtitle}</p>
-              <p className="mt-2 text-muted-foreground">{item.description}</p>
+              <p className="mt-2 text-muted-foreground text-sm sm:text-base">{item.description}</p>
             </motion.div>
           </motion.div>
         ))}
