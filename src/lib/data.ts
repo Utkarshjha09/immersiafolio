@@ -16,7 +16,7 @@ export const projects: Project[] = [
     imageHint: 'security camera',
     tags: ['Raspberry Pi', 'Python', 'OpenCV', 'IoT', 'Telegram API', 'Machine Learning'],
     sourceUrl: 'https://github.com/Utkarshjha09/FaceRecognitionSystem.git',
-    readmeUrl: 'https://github.com/Utkarshjha09/FaceRecognitionSystem/blob/39e2ce8320e3f5844dedf97257229e28f56e5c71/README.md',
+    readmeUrl: 'https://github.com/Utkarshjha09/FaceRecognitionSystem/blob/main/README.md',
   },
   {
     title: 'ESP32-Blynk-Notification-System',
@@ -34,7 +34,7 @@ export const socialLinks = {
   linkedin: 'https://www.linkedin.com/in/utkarshjha03/',
   instagram: 'https://www.instagram.com/utkarshjha03?igsh=MXM5OHl2eXBrZWIwdQ==',
   leetcode: 'https://leetcode.com/u/W03VazWUr9/',
-  codechef: 'https://www.codechef.com/users/utkarshjha09',
+  codeforces: 'https://codeforces.com/profile/utkarshjha09',
   whatsapp: 'https://wa.me/917061771437',
 };
 

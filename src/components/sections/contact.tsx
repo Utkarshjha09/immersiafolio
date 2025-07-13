@@ -5,13 +5,12 @@ import { Code, Github, Instagram, Linkedin, Mail, Phone, MessageCircle } from 'l
 import Link from 'next/link';
 import TrueFocus from '../true-focus';
 
-const CodeChefIcon = () => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-6 w-6">
-    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
-    <path d="M7 12H17" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-    <path d="M12 7V17" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+const CodeForcesIcon = () => (
+    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 fill-current">
+        <path d="M3.536 8.161V6.305h1.856v1.856zm15.072 0V6.305h1.856v1.856zM9.424 24a3.536 3.536 0 1 1 0-7.072 3.536 3.536 0 0 1 0 7.072zm5.12-3.536a3.536 3.536 0 1 0 0-7.072 3.536 3.536 0 0 0 0 7.072zM3.536 15.84V6.305H0V24h5.392v-2.784H3.536v-5.376zm1.856-9.535H1.856V4.448h3.536zM24 8.16V6.305h-3.536v1.856zm-1.856 1.856v5.376H24V0h-5.392v2.784h1.856v3.52h-3.536v1.857h3.536v1.856h-1.856zm-1.68-9.535V4.448h3.536v1.856z"/>
     </svg>
-  );
+);
+
 
 export default function Contact() {
   return (
@@ -73,8 +72,8 @@ export default function Contact() {
                 </Link>
               </Button>
               <Button asChild variant="default" size="icon" className="rounded-full w-12 h-12">
-                <Link href={socialLinks.codechef} target="_blank" rel="noopener noreferrer" aria-label="CodeChef">
-                    <CodeChefIcon />
+                <Link href={socialLinks.codeforces} target="_blank" rel="noopener noreferrer" aria-label="CodeForces">
+                    <CodeForcesIcon />
                 </Link>
               </Button>
               <Button asChild variant="default" size="icon" className="rounded-full w-12 h-12">
