@@ -32,9 +32,9 @@ export const projects: Project[] = [
 export const socialLinks = {
   github: 'https://github.com/Utkarshjha09',
   linkedin: 'https://www.linkedin.com/in/utkarshjha03/',
-  instagram: 'https://www.instagram.com/utkarshjha03?igsh=MXM5OHl2eXBrZWIwdQ==',
+  instagram: 'https://www.instagram.com/utkarshjha03',
   leetcode: 'https://leetcode.com/u/W03VazWUr9/',
-  codeforces: 'https://codeforces.com/profile/utkarshjha09',
+  codeforces: 'https://codeforces.com/profile/UtkarshJha03',
   whatsapp: 'https://wa.me/917061771437',
 };
 
