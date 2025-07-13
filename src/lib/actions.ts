@@ -1,6 +1,7 @@
 'use server';
 import { z } from 'zod';
 import { db } from './firebase';
+import { Resend } from 'resend';
 
 const formSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
@@ -54,12 +55,28 @@ export async function sendContactMessage(data: z.infer<typeof formSchema>) {
   
   const { name, email, subject, message, recaptchaToken } = result.data;
 
-  try {
-    const recaptchaResult = await verifyRecaptcha(recaptchaToken);
-    if (!recaptchaResult.success) {
-      return { success: false, error: { _errors: [recaptchaResult.error || "reCAPTCHA check failed."] }};
-    }
+  const recaptchaResult = await verifyRecaptcha(recaptchaToken);
+  if (!recaptchaResult.success) {
+    return { success: false, error: { _errors: [recaptchaResult.error || "reCAPTCHA check failed."] }};
+  }
 
+  const resendApiKey = process.env.RESEND_API_KEY;
+  const portfolioOwnerEmail = process.env.NEXT_PUBLIC_PORTFOLIO_OWNER_EMAIL;
+
+  if (!resendApiKey) {
+    console.error("RESEND_API_KEY is not set in .env file.");
+    return { success: false, error: { _errors: ["The server is not configured for sending emails."] } };
+  }
+
+  if (!portfolioOwnerEmail) {
+    console.error("NEXT_PUBLIC_PORTFOLIO_OWNER_EMAIL is not set in .env file.");
+    return { success: false, error: { _errors: ["The server is not configured for sending emails."] } };
+  }
+
+  const resend = new Resend(resendApiKey);
+
+  try {
+    // Save to Firestore
     await db.collection('contacts').add({
       name,
       email,
@@ -68,10 +85,37 @@ export async function sendContactMessage(data: z.infer<typeof formSchema>) {
       createdAt: new Date(),
     });
 
+    // Send email to portfolio owner
+    await resend.emails.send({
+      from: `Portfolio Contact <notification@resend.dev>`,
+      to: portfolioOwnerEmail,
+      subject: `New Portfolio Message: ${subject}`,
+      html: `
+        <p>You received a new message from your portfolio contact form.</p>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Subject:</strong> ${subject}</p>
+        <p><strong>Message:</strong></p>
+        <p>${message}</p>
+      `,
+    });
+
+    // Send confirmation email to visitor
+    await resend.emails.send({
+      from: 'Utkarsh Jha <noreply@resend.dev>',
+      to: email,
+      subject: 'Thank you for your message!',
+      html: `
+        <p>Hi ${name},</p>
+        <p>Thank you for contacting me. I have received your message and will get back to you as soon as possible.</p>
+        <p>Best regards,<br/>Utkarsh Jha</p>
+      `,
+    });
+
     return { success: true };
 
   } catch (error) {
-    console.error("Error writing to Firestore:", error);
+    console.error("Error processing contact form:", error);
     const errorMessage = error instanceof Error ? error.message : "An unknown server error occurred.";
     return { success: false, error: { _errors: [ `Server error: ${errorMessage}` ] }};
   }
