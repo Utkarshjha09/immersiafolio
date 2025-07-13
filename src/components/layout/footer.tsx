@@ -1,3 +1,4 @@
+'use client';
 import Link from 'next/link';
 import { Github, Linkedin, Instagram, Code, MessageCircle, Trophy } from 'lucide-react';
 import { socialLinks } from '@/lib/data';
@@ -8,24 +9,24 @@ export default function Footer() {
       <div className="container mx-auto px-4 md:px-6 py-6 flex flex-col sm:flex-row items-center justify-between">
         <p className="text-sm text-muted-foreground">&copy; {new Date().getFullYear()} Utkarsh Jha. All Rights Reserved.</p>
         <div className="flex items-center gap-4 mt-4 sm:mt-0">
-          <Link href={socialLinks.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <a href={socialLinks.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
             <Github className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
-          </Link>
-          <Link href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          </a>
+          <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <Linkedin className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
-          </Link>
-          <Link href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          </a>
+          <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
             <Instagram className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
-          </Link>
-          <Link href={socialLinks.leetcode} target="_blank" rel="noopener noreferrer" aria-label="LeetCode">
+          </a>
+          <a href={socialLinks.leetcode} target="_blank" rel="noopener noreferrer" aria-label="LeetCode">
             <Code className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
-          </Link>
-          <Link href={socialLinks.codeforces} target="_blank" rel="noopener noreferrer" aria-label="CodeForces">
+          </a>
+          <a href={socialLinks.codeforces} target="_blank" rel="noopener noreferrer" aria-label="CodeForces">
             <Trophy className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
-          </Link>
-           <Link href={socialLinks.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+          </a>
+           <a href={socialLinks.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
             <MessageCircle className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
-          </Link>
+          </a>
         </div>
       </div>
     </footer>

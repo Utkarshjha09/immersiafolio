@@ -2,7 +2,6 @@ import { ContactForm } from '@/components/contact-form';
 import { socialLinks } from '@/lib/data';
 import { Button } from '@/components/ui/button';
 import { Code, Github, Instagram, Linkedin, Mail, Phone, MessageCircle, Trophy } from 'lucide-react';
-import Link from 'next/link';
 import TrueFocus from '../true-focus';
 
 export default function Contact() {
@@ -45,34 +44,34 @@ export default function Contact() {
             </div>
             <div className="flex items-center gap-4 pt-4 flex-wrap">
               <Button asChild variant="default" size="icon" className="rounded-full w-12 h-12">
-                <Link href={socialLinks.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <a href={socialLinks.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                     <Github className="h-6 w-6" />
-                </Link>
+                </a>
               </Button>
               <Button asChild variant="default" size="icon" className="rounded-full w-12 h-12">
-                <Link href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                     <Linkedin className="h-6 w-6" />
-                </Link>
+                </a>
               </Button>
               <Button asChild variant="default" size="icon" className="rounded-full w-12 h-12">
-                <Link href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                     <Instagram className="h-6 w-6" />
-                </Link>
+                </a>
               </Button>
               <Button asChild variant="default" size="icon" className="rounded-full w-12 h-12">
-                 <Link href={socialLinks.leetcode} target="_blank" rel="noopener noreferrer" aria-label="LeetCode">
+                 <a href={socialLinks.leetcode} target="_blank" rel="noopener noreferrer" aria-label="LeetCode">
                     <Code className="h-6 w-6" />
-                </Link>
+                </a>
               </Button>
               <Button asChild variant="default" size="icon" className="rounded-full w-12 h-12">
-                <Link href={socialLinks.codeforces} target="_blank" rel="noopener noreferrer" aria-label="CodeForces">
+                <a href={socialLinks.codeforces} target="_blank" rel="noopener noreferrer" aria-label="CodeForces">
                     <Trophy className="h-6 w-6" />
-                </Link>
+                </a>
               </Button>
               <Button asChild variant="default" size="icon" className="rounded-full w-12 h-12">
-                <Link href={socialLinks.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                <a href={socialLinks.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
                     <MessageCircle className="h-6 w-6" />
-                </Link>
+                </a>
               </Button>
             </div>
           </div>
