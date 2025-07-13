@@ -83,15 +83,6 @@ export async function sendContactMessage(data: z.infer<typeof formSchema>) {
   });
 
   try {
-    // Save to Firestore
-    await db.collection('contacts').add({
-      name,
-      email,
-      subject,
-      message,
-      createdAt: new Date(),
-    });
-
     // Send email to portfolio owner
     await transporter.sendMail({
       from: `"${name}" <${SMTP_USER}>`,
