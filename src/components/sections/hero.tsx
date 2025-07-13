@@ -26,7 +26,7 @@ export default function Hero() {
               <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl font-headline">
                 Utkarsh Jha
               </h1>
-              <ShinyText className="text-lg sm:text-xl">Data Scientist | Data Analyst | MERN Stack Developer | Embedded</ShinyText>
+              <ShinyText className="text-lg sm:text-xl">Data Scientist | MERN Stack Developer | Embedded</ShinyText>
               <div className="text-xl md:text-2xl font-semibold">
                 <Typewriter 
                   strings={["MERN Stack Developer", "Verilog Expert", "Embedded Systems Engineer", "Data Scientist", "UI/UX Designer"]}

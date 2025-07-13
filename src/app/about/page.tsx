@@ -1,10 +1,10 @@
 import Image from 'next/image';
 
 const aboutImages = [
-  { src: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070&auto=format&fit=crop', alt: 'Event photo 1', hint: 'tech event' },
-  { src: 'https://placehold.co/600x800.png', alt: 'Event photo 2', hint: 'hackathon team' },
-  { src: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1974&auto=format&fit=crop', alt: 'Event photo 3', hint: 'presentation award' },
-  { src: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop', alt: 'Event photo 4', hint: 'team discussion' },
+  { src: '/Mypic3.png', alt: 'Event photo 1', hint: 'tech event' },
+  { src: '/Mypic1.png', alt: 'Event photo 2', hint: 'hackathon team' },
+  { src: '/Mypic2.png', alt: 'Event photo 3', hint: 'presentation award' },
+  { src: '/Mypic4.png', alt: 'Event photo 4', hint: 'team discussion' },
 ];
 
 export default function AboutPage() {
