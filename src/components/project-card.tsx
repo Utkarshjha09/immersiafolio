@@ -29,7 +29,7 @@ export function ProjectCard({ project, index }: { project: Project, index: numbe
             <CardTitle className="font-headline text-2xl">{project.title}</CardTitle>
         </CardHeader>
         <CardContent className="flex-grow">
-            <p className="text-muted-foreground mb-4">{project.description}</p>
+            <p className="text-muted-foreground mb-4 text-justify">{project.description}</p>
             <div className="flex flex-wrap gap-2">
             {project.tags.map(tag => (
                 <Badge key={tag} variant="secondary">{tag}</Badge>

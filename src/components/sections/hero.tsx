@@ -33,7 +33,7 @@ export default function Hero() {
                   cursorClassName="text-accent"
                 />
               </div>
-              <p className="max-w-[600px] text-muted-foreground md:text-lg">
+              <p className="max-w-[600px] text-muted-foreground md:text-lg text-justify">
                 I'm a versatile developer with expertise in Data Science, MERN Stack, and Embedded Systems. From analyzing data with Python to building web apps with React and Node.js, and developing hardware with Arduino and Verilog—I enjoy working across the full tech stack.
                 <br /><br />
                 With skills in Machine Learning, UI/UX, and system-level programming, I build efficient, scalable solutions using tools like Git, VS Code, and Postman. I'm always eager to solve problems and learn new technologies that drive real-world impact.
@@ -51,7 +51,7 @@ export default function Hero() {
           <div className="flex items-center justify-center min-h-[400px] sm:min-h-[480px]">
              <Dialog>
                 <DialogTrigger asChild>
-                    <div className="cursor-pointer transform scale-90 sm:scale-100">
+                    <div className="cursor-pointer transform scale-75 sm:scale-100">
                         <ProfileCard />
                     </div>
                 </DialogTrigger>

@@ -12,8 +12,8 @@ export default function AboutPage() {
     <div>
       <div className="container mx-auto max-w-6xl px-4 md:px-6 py-20 lg:py-32">
         <div className="grid md:grid-cols-2 gap-16 items-start">
-          <div className="space-y-6 text-lg text-foreground/80">
-            <h2 className="font-headline text-4xl font-bold text-primary">About Me</h2>
+          <div className="space-y-6 text-lg text-foreground/80 text-justify">
+            <h2 className="font-headline text-4xl font-bold text-primary text-left">About Me</h2>
             <p>
               I’m a multi-disciplinary developer with a strong command of Data Science, Full-Stack Web Development (MERN Stack), and Embedded Systems. I’m driven by the challenge of integrating data, software, and hardware to create scalable, efficient, and impactful solutions. Whether it’s training machine learning models, engineering real-time embedded systems, or deploying modern web applications, I’m comfortable operating across the full technology stack.
             </p>
