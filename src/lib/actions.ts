@@ -1,7 +1,7 @@
 'use server';
 import { z } from 'zod';
 import { db } from './firebase';
-import { Resend } from 'resend';
+import nodemailer from 'nodemailer';
 
 const formSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
@@ -60,20 +60,27 @@ export async function sendContactMessage(data: z.infer<typeof formSchema>) {
     return { success: false, error: { _errors: [recaptchaResult.error || "reCAPTCHA check failed."] }};
   }
 
-  const resendApiKey = process.env.RESEND_API_KEY;
-  const portfolioOwnerEmail = process.env.NEXT_PUBLIC_PORTFOLIO_OWNER_EMAIL;
+  const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, NEXT_PUBLIC_PORTFOLIO_OWNER_EMAIL } = process.env;
 
-  if (!resendApiKey) {
-    console.error("RESEND_API_KEY is not set in .env file.");
-    return { success: false, error: { _errors: ["The server is not configured for sending emails."] } };
+  if (!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASS) {
+      console.error("SMTP environment variables are not set.");
+      return { success: false, error: { _errors: ["The server is not configured for sending emails."] } };
   }
 
-  if (!portfolioOwnerEmail) {
+  if (!NEXT_PUBLIC_PORTFOLIO_OWNER_EMAIL) {
     console.error("NEXT_PUBLIC_PORTFOLIO_OWNER_EMAIL is not set in .env file.");
     return { success: false, error: { _errors: ["The server is not configured for sending emails."] } };
   }
 
-  const resend = new Resend(resendApiKey);
+  const transporter = nodemailer.createTransport({
+    host: SMTP_HOST,
+    port: parseInt(SMTP_PORT, 10),
+    secure: parseInt(SMTP_PORT, 10) === 465, // true for 465, false for other ports
+    auth: {
+      user: SMTP_USER,
+      pass: SMTP_PASS,
+    },
+  });
 
   try {
     // Save to Firestore
@@ -86,10 +93,11 @@ export async function sendContactMessage(data: z.infer<typeof formSchema>) {
     });
 
     // Send email to portfolio owner
-    await resend.emails.send({
-      from: `Portfolio Contact <notification@resend.dev>`,
-      to: portfolioOwnerEmail,
+    await transporter.sendMail({
+      from: `"${name}" <${SMTP_USER}>`,
+      to: NEXT_PUBLIC_PORTFOLIO_OWNER_EMAIL,
       subject: `New Portfolio Message: ${subject}`,
+      replyTo: email,
       html: `
         <p>You received a new message from your portfolio contact form.</p>
         <p><strong>Name:</strong> ${name}</p>
@@ -101,8 +109,8 @@ export async function sendContactMessage(data: z.infer<typeof formSchema>) {
     });
 
     // Send confirmation email to visitor
-    await resend.emails.send({
-      from: 'Utkarsh Jha <noreply@resend.dev>',
+    await transporter.sendMail({
+      from: `"Utkarsh Jha" <${SMTP_USER}>`,
       to: email,
       subject: 'Thank you for your message!',
       html: `
