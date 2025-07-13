@@ -1,9 +1,9 @@
 import Image from 'next/image';
 
 const aboutImages = [
-  { src: 'https://placehold.co/600x800.png', alt: 'Event photo 1', hint: 'tech event' },
-  { src: 'https://placehold.co/600x400.png', alt: 'Event photo 2', hint: 'hackathon team' },
-  { src: 'https://placehold.co/600x400.png', alt: 'Event photo 3', hint: 'presentation award' },
+  { src: 'Mypic3.png', alt: 'Event photo 1', hint: 'tech event' },
+  { src: '/Mypic1.png', alt: 'Event photo 2', hint: 'hackathon team' },
+  { src: '/Mypic2.png', alt: 'Event photo 3', hint: 'presentation award' },
   { src: 'https://placehold.co/600x800.png', alt: 'Event photo 4', hint: 'team discussion' },
 ];
 
