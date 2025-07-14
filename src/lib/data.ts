@@ -54,9 +54,11 @@ export const certificates: Certificate[] = [
     issuer: 'Ethnus & Codemithra',
     date: 'Issued: 10/07/2025',
     credentialId: 'ID: DPSNJRPP',
-    imageUrl: '/VLSI Design & Verification.png',
+    imageUrl: '/VLSI Design.png',
     imageHint: 'vlsi certificate',
-    certificateUrl: 'https://ethnus.com/certverify/',
+    certificateUrl: 'https://drive.google.com/file/d/1_xsAYrRtIStnHk_IO8zb-Ai9Z5h-QNGj/view?usp=drive_link',
+    documentId: '3e470e0a4a97c6b3448674852032ea0d',
+  
   },
   {
     title: 'Signal Processing with MATLAB',
