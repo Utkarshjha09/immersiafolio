@@ -50,6 +50,15 @@ export type Certificate = {
 
 export const certificates: Certificate[] = [
   {
+    title: 'VLSI Design & Verification Certification Program',
+    issuer: 'Ethnus & Codemithra',
+    date: 'Issued: 10/07/2025',
+    credentialId: 'ID: DPSNJRPP',
+    imageUrl: '/VLSI Design & Verification.png',
+    imageHint: 'vlsi certificate',
+    certificateUrl: 'https://ethnus.com/certverify/',
+  },
+  {
     title: 'Signal Processing with MATLAB',
     issuer: 'MathWorks',
     date: 'Expires: 07/02/2025',
