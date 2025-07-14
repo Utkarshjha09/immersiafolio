@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
@@ -22,6 +23,20 @@ const navLinks = [
 export default function Header() {
   const [isSheetOpen, setSheetOpen] = useState(false);
   const isMobile = useIsMobile();
+  const router = useRouter();
+
+  const handleMobileLinkClick = (href: string) => {
+    if (href.startsWith('/#')) {
+      router.push(href);
+      setSheetOpen(false);
+    } else {
+      setSheetOpen(false);
+      // We use a small timeout to allow the sheet to close before navigating
+      setTimeout(() => {
+        router.push(href);
+      }, 300); // 300ms matches sheet close animation
+    }
+  };
 
   return (
     <header className="w-full border-b bg-background">
@@ -41,16 +56,34 @@ export default function Header() {
             </SheetTrigger>
             <SheetContent side="right">
               <nav className="grid gap-6 text-lg font-medium mt-8">
-                {navLinks.map(({ href, label }) => (
-                  <Link
-                    key={label}
-                    href={href}
-                    className="transition-transform hover:scale-105"
-                    onClick={() => setSheetOpen(false)}
-                  >
-                    <ShinyText className="text-lg">{label}</ShinyText>
-                  </Link>
-                ))}
+                {navLinks.map(({ href, label }) => {
+                  if (href.startsWith('/#')) {
+                    // For homepage sections, we use a button with programmatic navigation
+                    return (
+                      <button
+                        key={label}
+                        onClick={() => handleMobileLinkClick(href)}
+                        className="text-left transition-transform hover:scale-105"
+                      >
+                        <ShinyText className="text-lg">{label}</ShinyText>
+                      </button>
+                    );
+                  }
+                  // For other pages, we can still use Link but handle the click
+                  return (
+                    <Link
+                      key={label}
+                      href={href}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleMobileLinkClick(href);
+                      }}
+                      className="transition-transform hover:scale-105"
+                    >
+                      <ShinyText className="text-lg">{label}</ShinyText>
+                    </Link>
+                  );
+                })}
               </nav>
             </SheetContent>
           </Sheet>
