@@ -57,7 +57,6 @@ export const certificates: Certificate[] = [
     imageUrl: '/VLSI Design.png',
     imageHint: 'vlsi certificate',
     certificateUrl: 'https://drive.google.com/file/d/1_xsAYrRtIStnHk_IO8zb-Ai9Z5h-QNGj/view?usp=drive_link',
-    documentId: '3e470e0a4a97c6b3448674852032ea0d',
   
   },
   {
