@@ -31,7 +31,7 @@ export default function Contact() {
                     <Mail className="h-6 w-6 text-primary" />
                     <div>
                         <h4 className="font-semibold">Email</h4>
-                        <a href="mailto:utkarshjha.999@gmail.com" className="text-muted-foreground hover:text-primary break-all">utkarshjha.999@gmail.com</a>
+                        <a href="mailto:work.utkarshjha@gmail.com" className="text-muted-foreground hover:text-primary break-all">work.utkarshjha@gmail.com</a>
                     </div>
                 </div>
                 <div className="flex items-center gap-4">

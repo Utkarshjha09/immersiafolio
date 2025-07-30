@@ -65,7 +65,7 @@ export default function Hero() {
                     </DialogHeader>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4">
                          <Button asChild>
-                            <a href="mailto:utkarshjha.999@gmail.com" className="flex items-center gap-2">
+                            <a href="mailto:work.utkarshjha@gmail.com" className="flex items-center gap-2">
                                 <Mail className="h-5 w-5" />
                                 Gmail
                             </a>
