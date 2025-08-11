@@ -9,7 +9,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { sendContactMessage } from '@/lib/actions';
-import { useRef, useTransition } from 'react';
+import { useRef, useState, useTransition } from 'react';
 import { Loader2, Terminal } from 'lucide-react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
@@ -25,6 +25,7 @@ const formSchema = z.object({
 export function ContactForm() {
   const { toast } = useToast();
   const [isPending, startTransition] = useTransition();
+  const [recaptchaToken, setRecaptchaToken] = useState('');
   const recaptchaRef = useRef<ReCAPTCHA>(null);
   const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
 
@@ -37,6 +38,7 @@ export function ContactForm() {
       message: '',
       recaptchaToken: '',
     },
+    mode: 'onChange'
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
@@ -49,6 +51,7 @@ export function ContactForm() {
         });
         form.reset();
         recaptchaRef.current?.reset();
+        setRecaptchaToken('');
       } else {
         const errorMessage = result.error?._errors?.join(', ') || 'Something went wrong. Please try again.';
         toast({
@@ -57,13 +60,18 @@ export function ContactForm() {
           variant: 'destructive',
         });
         recaptchaRef.current?.reset();
+        setRecaptchaToken('');
       }
     });
   }
 
   const handleRecaptchaChange = (token: string | null) => {
-    form.setValue('recaptchaToken', token || '', { shouldValidate: true });
+    const aToken = token || '';
+    setRecaptchaToken(aToken);
+    form.setValue('recaptchaToken', aToken, { shouldValidate: true });
   };
+
+  const isButtonDisabled = isPending || !siteKey || !form.formState.isValid || !recaptchaToken;
 
   return (
     <Form {...form}>
@@ -143,7 +151,7 @@ export function ContactForm() {
             </AlertDescription>
           </Alert>
         )}
-        <Button type="submit" className="w-full" disabled={isPending || !siteKey || !form.formState.isValid}>
+        <Button type="submit" className="w-full" disabled={isButtonDisabled}>
           {isPending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : 'Send Message'}
         </Button>
       </form>
