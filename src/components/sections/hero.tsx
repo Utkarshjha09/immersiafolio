@@ -14,6 +14,7 @@ import {
 import { Mail, MessageCircle } from 'lucide-react';
 import ProfileCard from '../profile-card';
 import { socialLinks } from '@/lib/data';
+import { cn } from '@/lib/utils';
 
 
 export default function Hero() {
@@ -85,3 +86,4 @@ export default function Hero() {
     </section>
   );
 }
+

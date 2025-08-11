@@ -1,45 +1,12 @@
 :root {
-  --card-opacity: 0.15;
-  --card-transition-duration: 300ms;
   --card-border-radius: 1.5rem;
-  --card-border-color: rgba(255, 255, 255, 0.2);
-  --card-shine-opacity: 0.1;
-  --card-glare-opacity: 0.1;
 }
 
 .pc-card-wrapper {
-  perspective: 2000px;
-  transform-style: preserve-3d;
   width: 340px;
   height: 480px;
   position: relative;
   color: #fff;
-}
-
-.pc-card-wrapper::before,
-.pc-card-wrapper::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: var(--card-border-radius);
-  transition: transform var(--card-transition-duration) ease-out;
-  background-image: var(--behind-gradient);
-  background-size: 200% 200%;
-  background-position: var(--background-x) var(--background-y);
-}
-
-.pc-card-wrapper::after {
-  opacity: 0.8;
-  filter: blur(25px);
-  transform: translateZ(-1px);
-}
-
-.pc-card-wrapper.active::before,
-.pc-card-wrapper.active::after {
-  transform: translateZ(-20px) scale(0.95);
 }
 
 .pc-card {
@@ -49,96 +16,42 @@
   position: relative;
   width: 100%;
   height: 100%;
-  transform-style: preserve-3d;
-  transform: rotateY(var(--rotate-x)) rotateX(var(--rotate-y));
-  transition: transform var(--card-transition-duration) ease-out;
   z-index: 1;
   box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.4);
-  border: 1px solid var(--card-border-color);
-  backdrop-filter: blur(16px);
-}
-
-.pc-inside {
-  position: relative;
-  width: 100%;
-  height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  background-image: var(--inner-gradient);
-  transform-style: preserve-3d;
-  z-index: 2;
 }
 
-.pc-shine, .pc-glare {
-  content: "";
+.pc-image-container {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  overflow: hidden;
   border-radius: var(--card-border-radius);
-  transition: opacity var(--card-transition-duration) ease-out;
-  pointer-events: none;
-  opacity: 0;
-  z-index: 5;
 }
 
-.pc-card.active .pc-shine,
-.pc-card.active .pc-glare {
-  opacity: 1;
-}
-
-.pc-shine {
-  background: radial-gradient(
-    circle at var(--pointer-x) var(--pointer-y),
-    hsla(0, 0%, 100%, var(--card-shine-opacity)),
-    transparent 40%
-  );
-}
-
-.pc-glare {
-  --glare-angle: 135deg;
-  --glare-opacity: calc(var(--pointer-from-center) * var(--card-glare-opacity));
-  opacity: var(--glare-opacity);
-  background: linear-gradient(
-    var(--glare-angle),
-    hsla(0, 0%, 100%, 0.25) 0%,
-    transparent 60%
-  );
-  transform: rotate(calc((var(--pointer-from-left) - 0.5) * 60deg));
-}
-
-.pc-content {
-  position: relative;
-  z-index: 3;
-}
-
-.pc-avatar-content {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
-}
-
-.pc-avatar-content .avatar {
+.pc-avatar {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center 20%;
+  transition: transform 0.4s ease-out;
+}
+
+.pc-card:hover .pc-avatar {
+  transform: scale(1.1);
 }
 
 .pc-details {
-  position: absolute;
-  bottom: 2.5rem;
-  left: 0;
-  right: 0;
+  position: relative;
+  z-index: 2;
   text-align: center;
-  z-index: 4;
-  padding: 0 1.5rem;
-  transform: translateZ(20px);
+  padding: 1.5rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 100%);
 }
 
 .pc-details h3 {
@@ -155,3 +68,4 @@
   margin-top: 0.25rem;
   text-shadow: 0 1px 5px rgba(0,0,0,0.3);
 }
+
