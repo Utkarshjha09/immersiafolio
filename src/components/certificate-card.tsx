@@ -31,20 +31,18 @@ export function CertificateCard({ certificate }: { certificate: Certificate }) {
         </CardContent>
         <CardFooter>
           <DialogTrigger asChild>
-            <GooeyButton asChild={false} className="w-full">
-              <span>
+             <GooeyButton className="w-full">
                 <Award className="mr-2 h-4 w-4" /> View Certificate
-              </span>
             </GooeyButton>
           </DialogTrigger>
         </CardFooter>
       </Card>
 
-      <DialogContent className="max-w-4xl h-[90vh] p-0">
-        <DialogHeader className="p-4">
+      <DialogContent className="max-w-4xl h-[90vh] p-0 flex flex-col">
+        <DialogHeader className="p-4 border-b">
           <DialogTitle>{certificate.title}</DialogTitle>
         </DialogHeader>
-        <div className="h-full w-full">
+        <div className="flex-grow h-full w-full">
           <iframe
             src={certificate.certificateUrl}
             className="w-full h-full border-0"
