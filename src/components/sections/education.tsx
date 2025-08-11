@@ -4,10 +4,10 @@ import { Timeline } from '@/components/ui/timeline';
 export default function Education() {
   const educationHistory = [
     {
-      title: "S.R.D.A.V. Public School, Pupri",
-      subtitle: "10th Standard",
-      date: "2020",
-      description: "Completed my secondary education, building a strong foundation in core subjects."
+      title: "Vellore Institute of Technology, Bhopal",
+      subtitle: "B.Tech, Electronics & Communication",
+      date: "2023-2027",
+      description: "Currently in my third year, deepening my expertise in electronics, communication systems, and hands-on project development."
     },
     {
       title: "J.P. Central School, Samastipur",
@@ -16,10 +16,10 @@ export default function Education() {
       description: "Excelled in my higher secondary education with a focus on Physics, Chemistry, and Mathematics."
     },
     {
-      title: "Vellore Institute of Technology, Bhopal",
-      subtitle: "B.Tech, Electronics & Communication",
-      date: "2023-2027",
-      description: "Currently in my third year, deepening my expertise in electronics, communication systems, and hands-on project development."
+      title: "S.R.D.A.V. Public School, Pupri",
+      subtitle: "10th Standard",
+      date: "2020",
+      description: "Completed my secondary education, building a strong foundation in core subjects."
     }
   ];
 
