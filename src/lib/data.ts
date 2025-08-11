@@ -56,7 +56,7 @@ export const certificates: Certificate[] = [
     credentialId: 'ID: DPSNJRPP',
     imageUrl: '/VLSI Design.png',
     imageHint: 'vlsi certificate',
-    certificateUrl: 'https://drive.google.com/file/d/1_xsAYrRtIStnHk_IO8zb-Ai9Z5h-QNGj/view?usp=drive_link',
+    certificateUrl: 'https://drive.google.com/file/d/1_xsAYrRtIStnHk_IO8zb-Ai9Z5h-QNGj/preview',
   
   },
   {
@@ -65,7 +65,7 @@ export const certificates: Certificate[] = [
     date: 'Expires: 07/02/2025',
     imageUrl: '/Signal Processing with MATLAB.png',
     imageHint: 'matlab certificate',
-    certificateUrl: 'https://drive.google.com/file/d/1UfPib41vq8-hV9ljPU1xxHPi8dsC5gni/view?usp=drive_link',
+    certificateUrl: 'https://drive.google.com/file/d/1UfPib41vq8-hV9ljPU1xxHPi8dsC5gni/preview',
   },
   {
     title: 'Fundamentals of AI and ML',
@@ -74,7 +74,7 @@ export const certificates: Certificate[] = [
     credentialId: 'ID: 23BEC10088',
     imageUrl: '/Fundamentals of AI and ML.png',
     imageHint: 'ai ml certificate',
-    certificateUrl: 'https://drive.google.com/file/d/1O989EYM_qsTVQNcs6-WiwNvMu13CthhS/view?usp=drive_link',
+    certificateUrl: 'https://drive.google.com/file/d/1O989EYM_qsTVQNcs6-WiwNvMu13CthhS/preview',
   },
   {
     title: 'Core Signal Processing Techniques in MATLAB',
@@ -82,7 +82,7 @@ export const certificates: Certificate[] = [
     date: 'Expires: 30/03/2025',
     imageUrl: '/Core Signal Processing Techniques in MATLAB.png',
     imageHint: 'matlab certificate',
-    certificateUrl: 'https://drive.google.com/file/d/1Ndd7iH5ZB9Psbgu9pHbPd4-m_LKXM8Jq/view?usp=drive_link',
+    certificateUrl: 'https://drive.google.com/file/d/1Ndd7iH5ZB9Psbgu9pHbPd4-m_LKXM8Jq/preview',
   },
   {
     title: 'Python Essentials Hindi',
@@ -91,7 +91,7 @@ export const certificates: Certificate[] = [
     credentialId: 'No: 100618484274170661',
     imageUrl: '/Python Essentials Hindi.png',
     imageHint: 'python certificate',
-    certificateUrl: 'https://drive.google.com/file/d/1p2k4xHvLRDxc0ZEVlwPXlb1_5F2zUZg7/view?usp=drive_link',
+    certificateUrl: 'https://drive.google.com/file/d/1p2k4xHvLRDxc0ZEVlwPXlb1_5F2zUZg7/preview',
   },
   {
     title: 'MATLAB Fundamentals',
@@ -99,7 +99,7 @@ export const certificates: Certificate[] = [
     date: 'Issued: 23/09/2024',
     imageUrl: '/MATLAB Fundamentals.png',
     imageHint: 'matlab certificate',
-    certificateUrl: 'https://drive.google.com/file/d/1lpgzSL4-xrihY9aIIiRQsSF28upV7_mU/view?usp=drive_link',
+    certificateUrl: 'https://drive.google.com/file/d/1lpgzSL4-xrihY9aIIiRQsSF28upV7_mU/preview',
   },
   {
     title: 'Introduction To Internet Of Things',
@@ -108,6 +108,15 @@ export const certificates: Certificate[] = [
     credentialId: 'Roll No: NPTEL25CS44S452400580',
     imageUrl: '/Introduction To Internet Of Things.png',
     imageHint: 'iot certificate',
-    certificateUrl: 'https://drive.google.com/file/d/1hfHIYjY9IW7ipjv_-yfagdyTkqI3FQp7/view?usp=drive_link',
+    certificateUrl: 'https://drive.google.com/file/d/1hfHIYjY9IW7ipjv_-yfagdyTkqI3FQp7/preview',
   },
+  {
+    title: 'VLSI Design & Verification',
+    issuer: 'Maven Silicon',
+    date: 'Issued: 24/07/2024',
+    credentialId: 'RV124_035',
+    imageUrl: '/VLSI.png',
+    imageHint: 'vlsi certificate',
+    certificateUrl: 'https://drive.google.com/file/d/10GzP_4xL-I5p_8QJ8zO-t2G7G9a4ZzJg/preview'
+  }
 ];
